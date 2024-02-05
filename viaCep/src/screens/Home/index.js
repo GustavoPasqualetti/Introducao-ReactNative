@@ -5,26 +5,22 @@ import axios from "axios";
 
 
 
-
 export function Home() {
 
     
     const [cep, setCep] = useState();
     const [endereco, setEndereco] = useState({});
 
+    const [estado, setEstado] = useState()
 
-    useEffect(() => {
-        if (cep) {
-            getCep();
-        } else {
-            limparCep();
-        }
-    }, [cep])
 
     const getCep = async () => {
         try {
             const response = await axios.get(`https://viacep.com.br/ws/${cep}/json/`);
             setEndereco(response.data)
+
+            const estado = await axios.get (`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${response.data.uf}`)
+            setEstado(estado.data.nome);
             
         } catch (error) {
             console.error
@@ -51,6 +47,7 @@ export function Home() {
                     editable={true}
                     fieldValue={cep}
                     onChangeText={text => setCep(text)}
+                    onBlur={cep ? getCep : limparCep}
                 />
                 <BoxInput
 
@@ -74,7 +71,7 @@ export function Home() {
                         fieldWidht={60}
                         textLabel="Estado"
                         placeholder="Estado..."
-                        fieldValue={endereco.uf}
+                        fieldValue={estado}
                     />
                     <BoxInput
                         fieldWidht={25}

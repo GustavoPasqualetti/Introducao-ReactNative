@@ -8,6 +8,7 @@ export function Input({
     onChangeText,
     keyType,
     maxLenght,
+    onBlur = null
 }) {
 return(
     <InputText
@@ -17,6 +18,7 @@ return(
     onChangeText={onChangeText}
     keyboardType={keyType}
     maxLenght={maxLenght}
+    onBlur={onBlur}
     />
 )
 }
