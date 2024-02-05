@@ -29,7 +29,7 @@ export function Home() {
     };
 
     function limparCep() {
-        setEndereco({})
+        setEndereco({}), setEstado({})
     }
 
 
