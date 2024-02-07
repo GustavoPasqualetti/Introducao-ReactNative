@@ -1,16 +1,21 @@
 import { Text, View } from "react-native"
 import { Container } from "../../components/Container/Style"
-import { Logo } from "../../components/Logo/Style"
+import { Logo, LogoGoogle } from "../../components/Logo/Style"
 import { Title } from "../../components/Title/Style"
 import { Input } from "../../components/Input/Styled"
-import { LinkMedium } from "../../components/Links/Style"
+import { LinkAccount, LinkMedium } from "../../components/Links/Style"
+import { Button, ButtonGoogle } from "../../components/Button/Style"
+import { ButtonTitle, ButtonTitleGoogle } from "../../components/ButtonTitle/Style"
+import { TextAccount} from "../../components/TextAccount/Style"
+import { ContentAccount } from "../../components/ContentAccount/Style"
 
-export const login = () => {
+
+export const login = ({navigation}) => {
     return(
         <Container>
             <Logo source={require('../../assets/logo.png')}/>
 
-             <Title>Entrar ou criar conta</Title>
+            <Title>Entrar ou criar conta</Title>
 
             <Input placeholder="Usuário ou E-mail"/>
             
@@ -18,19 +23,21 @@ export const login = () => {
             secureTextEntry='true'
             />
 
-            <LinkMedium>Esqueceu sua senha?</LinkMedium>
+            <LinkMedium onPress={() => navigation.navigate("Recover")} title="Recover">Esqueceu sua senha?</LinkMedium>
 
-            {/* <Button>
-                <ButtonTitle></ButtonTitle>
+             <Button>
+                <ButtonTitle>ENTRAR</ButtonTitle>
             </Button>
 
             <ButtonGoogle>
-                <ButtonTitleGoogle></ButtonTitleGoogle>
-            </ButtonGoogle>
+                <LogoGoogle source={require('../../assets/google.png')} />
+                <ButtonTitleGoogle>ENTRAR COM GOOGLE</ButtonTitleGoogle>
+            </ButtonGoogle> 
 
-            <ContainerAccount>
-                <TextAccount></TextAccount>
-            </ContainerAccount>   */}
+            <ContentAccount>
+                <TextAccount>Não tem conta? </TextAccount>
+                <LinkAccount onPress={() => navigation.navigate("Account")} title="Account">Crie uma conta agora!</LinkAccount>
+            </ContentAccount>   
 
         </Container>
     )

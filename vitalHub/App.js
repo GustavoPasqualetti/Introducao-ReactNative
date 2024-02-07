@@ -6,12 +6,15 @@ import { login, loginNav } from './src/screens/Login/Login';
 
 const Stack = createNativeStackNavigator();
 
-import { useFonts, MontserratAlternates_600SemiBold, MontserratAlternates_500Medium } from "@expo-google-fonts/montserrat-alternates";
+import { useFonts, MontserratAlternates_600SemiBold, MontserratAlternates_500Medium, MontserratAlternates_700Bold } from "@expo-google-fonts/montserrat-alternates";
+import { Account } from './src/screens/Account/Account';
+import { Recover } from './src/screens/Recover/Recover';
+import { EmailCode } from './src/screens/EmailCode/EmailCode';
 
 export default function App() {
 
   const[fontsLoaded, fontsError] = useFonts({
-    MontserratAlternates_600SemiBold, MontserratAlternates_500Medium,
+    MontserratAlternates_600SemiBold, MontserratAlternates_500Medium, MontserratAlternates_700Bold,
   })
 
   if (!fontsLoaded && !fontsError) {
@@ -35,6 +38,24 @@ export default function App() {
         component={login}
         options={{ title: 'Login' }}        
         />
+
+        <Stack.Screen 
+        name='Account'
+        component={Account}
+        options={{ title: 'Account' }}        
+        />
+
+         <Stack.Screen 
+        name='Recover'
+        component={Recover}
+        options={{ title: 'Recover' }}        
+        /> 
+        
+          {/* <Stack.Screen 
+        name='EmailCode'
+        component={EmailCode}
+        options={{ title: 'EmailCode' }}        
+        />   */}
       </Stack.Navigator>
 
     </NavigationContainer>
