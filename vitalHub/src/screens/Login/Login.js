@@ -23,7 +23,7 @@ export const login = ({navigation}) => {
             secureTextEntry='true'
             />
 
-            <LinkMedium onPress={() => navigation.navigate("Recover")} title="Recover">Esqueceu sua senha?</LinkMedium>
+            <LinkMedium onPress={() => navigation.navigate("Recover")}>Esqueceu sua senha?</LinkMedium>
 
              <Button>
                 <ButtonTitle>ENTRAR</ButtonTitle>
@@ -36,7 +36,7 @@ export const login = ({navigation}) => {
 
             <ContentAccount>
                 <TextAccount>Não tem conta? </TextAccount>
-                <LinkAccount onPress={() => navigation.navigate("Account")} title="Account">Crie uma conta agora!</LinkAccount>
+                <LinkAccount onPress={() => navigation.navigate("Account")} >Crie uma conta agora!</LinkAccount>
             </ContentAccount>   
 
         </Container>

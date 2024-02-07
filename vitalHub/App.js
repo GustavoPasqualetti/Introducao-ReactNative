@@ -10,6 +10,7 @@ import { useFonts, MontserratAlternates_600SemiBold, MontserratAlternates_500Med
 import { Account } from './src/screens/Account/Account';
 import { Recover } from './src/screens/Recover/Recover';
 import { EmailCode } from './src/screens/EmailCode/EmailCode';
+import { Reset } from './src/screens/Reset/Reset';
 
 export default function App() {
 
@@ -25,7 +26,9 @@ export default function App() {
  
     <NavigationContainer>
 
-      <Stack.Navigator>
+      <Stack.Navigator screenOptions={{
+        headerShown: false
+      }}>
 
         <Stack.Screen 
         name='Navegacao'
@@ -45,17 +48,23 @@ export default function App() {
         options={{ title: 'Account' }}        
         />
 
-         <Stack.Screen 
+        <Stack.Screen 
         name='Recover'
         component={Recover}
         options={{ title: 'Recover' }}        
         /> 
         
-          {/* <Stack.Screen 
+        <Stack.Screen 
         name='EmailCode'
         component={EmailCode}
         options={{ title: 'EmailCode' }}        
-        />   */}
+        />   
+
+        <Stack.Screen 
+        name='Reset'
+        component={Reset}
+        options={{ title: 'Reset' }}        
+        />  
       </Stack.Navigator>
 
     </NavigationContainer>

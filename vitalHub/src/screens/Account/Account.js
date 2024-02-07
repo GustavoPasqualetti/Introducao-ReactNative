@@ -7,7 +7,8 @@ import { Button } from "../../components/Button/Style"
 import { ButtonTitle } from "../../components/ButtonTitle/Style"
 import { ContentAccount } from "../../components/ContentAccount/Style"
 import { LinKCancel } from "../../components/Links/Style"
-import { TextCreate } from "../../components/TextAdd/Style"
+import { TextAdd } from "../../components/TextAdd/Style"
+
 
 export const Account = ({navigation}) => {
     return (
@@ -16,7 +17,8 @@ export const Account = ({navigation}) => {
 
             <Title>Criar conta</Title>
 
-            <TextCreate>Insira seu endereço de e-mail e senha para realizar seu cadastro.</TextCreate>
+            <TextAdd>Insira seu endereço de e-mail e senha para realizar seu cadastro.</TextAdd>
+
 
             <Input placeholder="Usuário ou E-mail"/>
 
@@ -30,7 +32,7 @@ export const Account = ({navigation}) => {
 
             <ContentAccount>
                 <LinKCancel 
-            onPress={() => navigation.navigate("Login")} title="login">Cancelar</LinKCancel>
+            onPress={() => navigation.navigate("Login")} >Cancelar</LinKCancel>
             </ContentAccount>
 
         </Container>
