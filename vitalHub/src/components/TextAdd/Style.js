@@ -9,6 +9,9 @@ margin-top: 20px;
 margin-bottom: 20px;
 color: #5F5C6B;
 `
+export const TextAccount = styled.Text`
+font-family: "MontserratAlternates_500Medium";
+`
 
 export const TextUser = styled.Text`
 font-family: "MontserratAlternates_500Medium";

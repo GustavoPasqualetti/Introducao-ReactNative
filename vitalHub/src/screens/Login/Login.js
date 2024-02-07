@@ -1,13 +1,13 @@
 import { Text, View } from "react-native"
-import { Container } from "../../components/Container/Style"
+import { Container, ContentAccount } from "../../components/Container/Style"
 import { Logo, LogoGoogle } from "../../components/Logo/Style"
 import { Title } from "../../components/Title/Style"
 import { Input } from "../../components/Input/Styled"
 import { LinkAccount, LinkMedium } from "../../components/Links/Style"
 import { Button, ButtonGoogle } from "../../components/Button/Style"
 import { ButtonTitle, ButtonTitleGoogle } from "../../components/ButtonTitle/Style"
-import { TextAccount} from "../../components/TextAccount/Style"
-import { ContentAccount } from "../../components/ContentAccount/Style"
+import { TextAccount } from "../../components/TextAdd/Style"
+
 
 
 export const login = ({navigation}) => {
@@ -37,8 +37,8 @@ export const login = ({navigation}) => {
             <ContentAccount>
                 <TextAccount>Não tem conta? </TextAccount>
                 <LinkAccount onPress={() => navigation.navigate("Account")} >Crie uma conta agora!</LinkAccount>
-            </ContentAccount>   
-
+            </ContentAccount>    
+               
         </Container>
     )
 }

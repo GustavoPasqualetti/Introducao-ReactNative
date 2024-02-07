@@ -1,7 +1,7 @@
-import { Button } from "../../components/Button/Style"
+import { Button, ButtonIcon, IconClose } from "../../components/Button/Style"
 import { ButtonTitle } from "../../components/ButtonTitle/Style"
 import { Container, ContentVerify } from "../../components/Container/Style"
-import { InputVerify } from "../../components/InputVerify/Style"
+import { InputVerify } from "../../components/Input/Styled"
 import { LinkResend } from "../../components/Links/Style"
 import { Logo } from "../../components/Logo/Style"
 import { TextAdd, TextUser, TextUserBlue } from "../../components/TextAdd/Style"
@@ -10,6 +10,10 @@ import { Title } from "../../components/Title/Style"
 export const EmailCode = ({navigation}) => {
     return (
         <Container>
+            <ButtonIcon onPress={() => navigation.navigate("Login")}>
+                <IconClose source={require("../../assets/x.png")}/>
+            </ButtonIcon>
+            
             <Logo source={require('../../assets/logo.png')} />
 
             <Title>Verifique seu e-mail</Title>
@@ -20,10 +24,10 @@ export const EmailCode = ({navigation}) => {
 
             <ContentVerify>
 
-                <InputVerify />
-                <InputVerify />
-                <InputVerify />
-                <InputVerify />
+                <InputVerify/>
+                <InputVerify/>
+                <InputVerify/>
+                <InputVerify/>
 
             </ContentVerify>
             

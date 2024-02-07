@@ -1,11 +1,10 @@
 import { Text } from "react-native"
 import { Logo } from "../../components/Logo/Style"
 import { Title } from "../../components/Title/Style"
-import { Container } from "../../components/Container/Style"
+import { Container, ContentAccount } from "../../components/Container/Style"
 import { Input } from "../../components/Input/Styled"
 import { Button } from "../../components/Button/Style"
 import { ButtonTitle } from "../../components/ButtonTitle/Style"
-import { ContentAccount } from "../../components/ContentAccount/Style"
 import { LinKCancel } from "../../components/Links/Style"
 import { TextAdd } from "../../components/TextAdd/Style"
 

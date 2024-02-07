@@ -1,4 +1,4 @@
-import { Button } from "../../components/Button/Style"
+import { Button, ButtonIcon, IconReturn } from "../../components/Button/Style"
 import { ButtonTitle } from "../../components/ButtonTitle/Style"
 import { Container } from "../../components/Container/Style"
 import { Input } from "../../components/Input/Styled"
@@ -9,6 +9,9 @@ import { Title } from "../../components/Title/Style"
 export const Recover = ({navigation}) => {
     return(
         <Container>
+            <ButtonIcon onPress={() => navigation.navigate("Login")}>
+                <IconReturn source={require("../../assets/seta.png")} />
+            </ButtonIcon>
             <Logo source={require('../../assets/logo.png')}/>
 
             <Title>Recuperar senha</Title>

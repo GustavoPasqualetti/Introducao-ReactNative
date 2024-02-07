@@ -13,3 +13,4 @@ export const LogoGoogle = styled.Image`
 height: 20px;
 width: 20px;
 `
+
