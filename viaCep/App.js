@@ -4,6 +4,7 @@ import { Header } from './src/components/Header';
 
 import { ContainerApp } from './styles';
 import { Home } from './src/screens/Home';
+import { Platform } from 'react-native';
 
 export default function App() {
   
@@ -15,7 +16,7 @@ export default function App() {
     return null
   }
   return (
-    <ContainerApp>
+    <ContainerApp behavior={Platform.OS == "ios" ? "padding" : "height"}>
       <Header/>
       <Home/>
     </ContainerApp>
