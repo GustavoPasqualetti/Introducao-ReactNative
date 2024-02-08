@@ -24,10 +24,34 @@ export const EmailCode = ({navigation}) => {
 
             <ContentVerify>
 
-                <InputVerify/>
-                <InputVerify/>
-                <InputVerify/>
-                <InputVerify/>
+                <InputVerify 
+                placeholder="0"
+                placeholderTextColor='#34898F'
+                keyboardType="numeric"
+                maxLength={1}
+                textAlign='center'
+                />
+                <InputVerify 
+                placeholder="0"
+                placeholderTextColor='#34898F'
+                keyboardType="numeric"
+                maxLength={1}
+                textAlign='center'
+                />
+                <InputVerify 
+                placeholder="0"
+                placeholderTextColor='#34898F'
+                keyboardType="numeric"
+                maxLength={1}
+                textAlign='center'
+                />
+                <InputVerify 
+                placeholder="0"
+                placeholderTextColor='#34898F'
+                keyboardType="numeric"
+                maxLength={1}
+                textAlign='center'
+                />
 
             </ContentVerify>
             

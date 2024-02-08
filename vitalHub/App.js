@@ -7,15 +7,19 @@ import { login, loginNav } from './src/screens/Login/Login';
 const Stack = createNativeStackNavigator();
 
 import { useFonts, MontserratAlternates_600SemiBold, MontserratAlternates_500Medium, MontserratAlternates_700Bold } from "@expo-google-fonts/montserrat-alternates";
+import { Quicksand_500Medium } from '@expo-google-fonts/quicksand';
 import { Account } from './src/screens/Account/Account';
 import { Recover } from './src/screens/Recover/Recover';
 import { EmailCode } from './src/screens/EmailCode/EmailCode';
 import { Reset } from './src/screens/Reset/Reset';
+import { Profile } from './src/screens/Profile/Profile';
+
+
 
 export default function App() {
 
   const[fontsLoaded, fontsError] = useFonts({
-    MontserratAlternates_600SemiBold, MontserratAlternates_500Medium, MontserratAlternates_700Bold,
+    MontserratAlternates_600SemiBold, MontserratAlternates_500Medium, MontserratAlternates_700Bold, Quicksand_500Medium
   })
 
   if (!fontsLoaded && !fontsError) {
@@ -65,6 +69,18 @@ export default function App() {
         component={Reset}
         options={{ title: 'Reset' }}        
         />  
+
+        {/* <Stack.Screen 
+        name='QueryDoctor'
+        component={QueryDoctor}
+        options={{ title: 'QueryDoctor' }}        
+        />   */}
+
+         <Stack.Screen 
+        name='Profile'
+        component={Profile}
+        options={{ title: 'Profile' }}        
+        />   
       </Stack.Navigator>
 
     </NavigationContainer>

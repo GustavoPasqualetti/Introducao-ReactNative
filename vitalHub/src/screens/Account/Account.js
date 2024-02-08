@@ -21,9 +21,11 @@ export const Account = ({navigation}) => {
 
             <Input placeholder="Usuário ou E-mail"/>
 
-            <Input placeholder="Senha"/>
+            <Input placeholder="Senha" secureTextEntry='true'
+            />
 
-            <Input placeholder="Confirmar senha"/>
+            <Input placeholder="Confirmar senha" secureTextEntry='true'
+            />
 
             <Button>
                 <ButtonTitle>CADASTRAR</ButtonTitle>

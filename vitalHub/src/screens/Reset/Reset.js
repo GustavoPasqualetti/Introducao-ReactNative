@@ -19,9 +19,11 @@ export const Reset = ({navigation}) => {
 
             <TextAdd>Insira e confirme a sua nova senha</TextAdd>
 
-            <Input placeholder="Nova senha" />
+            <Input placeholder="Nova senha" secureTextEntry='true' 
+            />
 
-            <Input placeholder="Confirmar nova senha" />
+            <Input placeholder="Confirmar nova senha" secureTextEntry='true'
+            />
 
             <Button onPress={() => navigation.navigate("Login")}>
                 <ButtonTitle>

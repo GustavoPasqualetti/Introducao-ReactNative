@@ -19,5 +19,7 @@ width: 65px;
 height: 62;
 border: 2px solid #49b3ba;
 border-radius: 5px;
-font-size: 14px;
+font-size: 40x;
+align-items: center;
+color:#34898F ;
 `

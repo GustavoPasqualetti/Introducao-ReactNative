@@ -20,3 +20,11 @@ align-items: center;
 width: 88%;
 margin-top: 10px;
 `
+
+export const ContainerScroll = styled.ScrollView`
+
+`
+
+export const ContainerProfile = styled(Container)`
+
+`

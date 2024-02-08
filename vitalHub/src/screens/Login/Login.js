@@ -25,11 +25,11 @@ export const login = ({navigation}) => {
 
             <LinkMedium onPress={() => navigation.navigate("Recover")}>Esqueceu sua senha?</LinkMedium>
 
-             <Button>
+             <Button onPress={() => navigation.navigate("Profile")}>
                 <ButtonTitle>ENTRAR</ButtonTitle>
             </Button>
 
-            <ButtonGoogle>
+            <ButtonGoogle onPress={() => navigation.navigate("Profile")}>
                 <LogoGoogle source={require('../../assets/google.png')} />
                 <ButtonTitleGoogle>ENTRAR COM GOOGLE</ButtonTitleGoogle>
             </ButtonGoogle> 
