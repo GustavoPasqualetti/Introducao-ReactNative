@@ -14,3 +14,8 @@ height: 20px;
 width: 20px;
 `
 
+export const NotiIcon = styled.Image`
+height: 25px;
+width: 25px;
+margin-top: 50;
+`

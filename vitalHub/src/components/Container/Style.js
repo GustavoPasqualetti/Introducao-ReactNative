@@ -1,3 +1,5 @@
+
+import { LinearGradient } from "expo-linear-gradient"
 import styled from "styled-components"
 
 export const Container = styled.View`
@@ -36,3 +38,22 @@ justify-content: space-between;
 flex-direction: row;
 align-items:center ;
 `
+
+export const ContainerHeader = styled(LinearGradient).attrs({
+    colors: ["#60BFC5", "#496BBA"],
+    start: { x: -0.05, y: 1.08 },
+    end: { x: 1, y: 0 },
+    
+  })`
+    width: 100%;
+    padding: 20px;
+    padding-bottom: 22px;
+  
+    height: 22%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  
+    border-radius: 0px 0px 15px 15px;
+    box-shadow: 0px 4px 15px #00000014;
+  `;

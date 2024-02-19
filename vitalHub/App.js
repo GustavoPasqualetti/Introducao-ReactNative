@@ -13,6 +13,7 @@ import { Recover } from './src/screens/Recover/Recover';
 import { EmailCode } from './src/screens/EmailCode/EmailCode';
 import { Reset } from './src/screens/Reset/Reset';
 import { Profile } from './src/screens/Profile/Profile';
+import { Home } from './src/screens/Home/Home';
 
 
 
@@ -72,9 +73,9 @@ export default function App() {
 
 
          <Stack.Screen 
-        name='Profile'
-        component={Profile}
-        options={{ title: 'Profile' }}        
+        name='Home'
+        component={Home}
+        options={{ title: 'Home' }}        
         />   
       </Stack.Navigator>
 

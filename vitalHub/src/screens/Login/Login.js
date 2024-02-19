@@ -25,7 +25,7 @@ export const login = ({navigation}) => {
 
             <LinkMedium onPress={() => navigation.navigate("Recover")}>Esqueceu sua senha?</LinkMedium>
 
-             <Button onPress={() => navigation.navigate("Profile")}>
+             <Button onPress={() => navigation.navigate("Home")}>
                 <ButtonTitle>ENTRAR</ButtonTitle>
             </Button>
 
