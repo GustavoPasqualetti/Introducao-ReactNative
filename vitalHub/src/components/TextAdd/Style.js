@@ -29,3 +29,9 @@ font-size: 16px;
 color: #496BBA;
 margin-bottom: 30px;
 `
+
+export const CardText = styled.Text`
+font-family: MontserratAlternates_500Medium;
+font-size: 12px;
+color: #C81D25;
+`

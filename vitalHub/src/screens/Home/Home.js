@@ -5,6 +5,7 @@ import { CalendarHome } from "../../components/CalendarHome/CalendarHome"
 import { useState } from "react"
 import { ButtonTabs } from "../../components/ButtonTabs/ButtonTabs"
 import { ContainerAppointment } from "./Style"
+import { QueryCard } from "../../components/QueryCard/QueryCard"
 
 const Consultas = [
     {id: 1, nome: "gustavo", situacao: "pendente"},
@@ -44,6 +45,8 @@ export const Home = () => {
                  clickButton={statusList === 'cancelado'}
                  onPress={() => setStatusList('cancelado')}
                 />
+
+                {/* <QueryCard/> */}
 
             </ContainerAppointment>
         </Container>
