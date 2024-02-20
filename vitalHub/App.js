@@ -7,7 +7,7 @@ import { login, loginNav } from './src/screens/Login/Login';
 const Stack = createNativeStackNavigator();
 
 import { useFonts, MontserratAlternates_600SemiBold, MontserratAlternates_500Medium, MontserratAlternates_700Bold } from "@expo-google-fonts/montserrat-alternates";
-import { Quicksand_500Medium, Quicksand_600SemiBold } from '@expo-google-fonts/quicksand';
+import { Quicksand_500Medium, Quicksand_600SemiBold, Quicksand_400Regular } from '@expo-google-fonts/quicksand';
 import { Account } from './src/screens/Account/Account';
 import { Recover } from './src/screens/Recover/Recover';
 import { EmailCode } from './src/screens/EmailCode/EmailCode';
@@ -20,7 +20,7 @@ import { Home } from './src/screens/Home/Home';
 export default function App() {
 
   const[fontsLoaded, fontsError] = useFonts({
-    MontserratAlternates_600SemiBold, MontserratAlternates_500Medium, MontserratAlternates_700Bold, Quicksand_500Medium, Quicksand_600SemiBold
+    MontserratAlternates_600SemiBold, MontserratAlternates_500Medium, MontserratAlternates_700Bold, Quicksand_500Medium, Quicksand_600SemiBold, Quicksand_400Regular
   })
 
   if (!fontsLoaded && !fontsError) {

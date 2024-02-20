@@ -6,49 +6,65 @@ import { useState } from "react"
 import { ButtonTabs } from "../../components/ButtonTabs/ButtonTabs"
 import { ContainerAppointment } from "./Style"
 import { QueryCard } from "../../components/QueryCard/QueryCard"
+import { ListComponent } from "../../components/List/List"
 
 const Consultas = [
-    {id: 1, nome: "gustavo", situacao: "pendente"},
-    {id: 2, nome: "gabriel", situacao: "realizado"},
-    {id: 3, nome: "eduardo", situacao: "cancelado"},
-    {id: 4, nome: "joao", situacao: "realizado"}
+    { id: 1, nome: "gustavo", situacao: "pendente" },
+    { id: 2, nome: "gabriel", situacao: "realizada" },
+    { id: 3, nome: "eduardo", situacao: "cancelada" },
+    { id: 4, nome: "joao", situacao: "realizada" }
 ]
 
 export const Home = () => {
 
-    const[statusList, setStatusList] = useState("pendente")
+    const [statusList, setStatusList] = useState("pendente")
 
-    return(
+    return (
         <Container>
-            <StatusBar/>
+            <StatusBar />
 
-            <Header/>
+            <Header />
 
-            <CalendarHome/>
+            <CalendarHome />
 
             <ContainerAppointment>
 
                 <ButtonTabs
-                 textButton={'Pendente'}
-                 clickButton={statusList === 'pendente'}
-                 onPress={() => setStatusList('pendente')}
-                />
-                    
-                <ButtonTabs
-                textButton={'Realizadas'}
-                clickButton={statusList === 'realizado'}
-                onPress={() => setStatusList('realizado')}
+                    textButton={'pendente'}
+                    clickButton={statusList === 'pendente'}
+                    onPress={() => setStatusList('pendente')}
                 />
 
                 <ButtonTabs
-                 textButton={'Canceladas'}
-                 clickButton={statusList === 'cancelado'}
-                 onPress={() => setStatusList('cancelado')}
+                    textButton={'realizada'}
+                    clickButton={statusList === 'realizada'}
+                    onPress={() => setStatusList('realizada')}
                 />
 
-                {/* <QueryCard/> */}
+                <ButtonTabs
+                    textButton={'cancelada'}
+                    clickButton={statusList === 'cancelada'}
+                    onPress={() => setStatusList('cancelada')}
+                />
 
             </ContainerAppointment>
+
+            <ListComponent
+                data={Consultas}
+                keyExtractor={(item) => item.id}
+
+                renderItem={({ item }) =>
+                    statusList == item.situacao && (
+                        <QueryCard 
+                        situacao={item.situacao}
+                        />
+                    )
+                }
+            />
+
+          
+
+
         </Container>
     )
 }

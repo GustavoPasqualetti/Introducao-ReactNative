@@ -27,3 +27,4 @@ font-family: MontserratAlternates_600SemiBold;
 font-size: 14px;
 margin-top: 70px;
 `
+
