@@ -4,13 +4,16 @@ import { Title } from "../Title/Style";
 export const ContainerCard = styled.View`
 width: 90%;
 height: 102px;
-border: 1px solid black;
+
 flex-direction: row;
 margin-top: 10px;
 align-items: center;
 justify-content: center;
 gap: 20px;
 margin: 0 auto;
+margin-bottom: 10px;
+background-color: #fff;
+box-shadow: 4px 4px 15px rgba(0,0,0,0.08);
 `
 
 export const ImageCard = styled.Image`
@@ -43,6 +46,7 @@ font-family: Quicksand_400Regular;
 
 export const TextBold = styled(TextAge)`
 font-family: Quicksand_600SemiBold;
+color: ${(props) => props.situacao == "pendente" ? "#49B3BA" : "#4E4B59"};
 `
 
 export const ViewRow = styled.View`
@@ -55,7 +59,6 @@ margin-top: 10px;
 `
 
 export const ClockCard = styled.View`
-background-color: #E8FCFD;
 padding: 4px 2px;
 width: 90px;
 height: 28px;
@@ -73,7 +76,8 @@ margin-right: 20px;
 
 export const ButtonText = styled.Text`
 font-family: MontserratAlternates_500Medium;
-font-size: 12px;
-color: #C81D25;
+font-size: 14px;
 color: ${(props) => props.situacao == "pendente" ? "#c81d25" : "#344f8f"}
+
 `
+

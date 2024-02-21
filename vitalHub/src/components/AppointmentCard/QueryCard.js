@@ -1,7 +1,7 @@
 import { ButtonCard, ButtonText, ClockCard, ContainerCard, ContentCard, DateProfileCard, ImageCard, ProfileData, ProfileName, TextAge, TextBold, ViewRow } from "./Style"
 import { AntDesign } from '@expo/vector-icons';
 
-export const QueryCard = ({
+export const AppointmentCard = ({
     situacao = "pendente",
     onPressAppointment,
     onPressCancel
@@ -24,14 +24,14 @@ export const QueryCard = ({
                 </DateProfileCard>
 
                 <ViewRow>
-                    <ClockCard>
+                    <ClockCard situacao={situacao}>
                         <AntDesign
                             name="clockcircle"
                             size={14}
-                            color={situacao == "pendente" ? "498b3ba" : "8ca97"}
+                            color={situacao == "pendente" ? '#49B3BA' : '4E4B59'}
                         />
                         <TextBold
-                            situacao={situacao} color={"#8c8a97"}
+                            situacao={situacao} 
                         >
                             14:00</TextBold>
                     </ClockCard>
@@ -41,14 +41,13 @@ export const QueryCard = ({
                             </>
                         ) : situacao == "pendente" ? (
                             <ButtonCard onPress={onPressCancel}>
-                                <ButtonText>Cancelar</ButtonText>
+                                <ButtonText situacao={situacao}>Cancelar</ButtonText>
                             </ButtonCard>
                         ) : (
                             <ButtonCard onPress={onPressAppointment}>
-                                <ButtonText>Ver Prontuario</ButtonText>
+                                <ButtonText situacao={situacao} >Ver Prontuario</ButtonText>
                             </ButtonCard>
                         )
-
                     }
 
                 </ViewRow>
