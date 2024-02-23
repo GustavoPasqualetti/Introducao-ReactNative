@@ -8,7 +8,9 @@ export function InputProfile({
     keyType,
     maxLenght,
     onBlur = null,
-    fieldWidht = 100
+    fieldWidht = 100,
+    fieldHeight = 50,
+    multiline
 }) {
 return(
     <InputText
@@ -20,6 +22,8 @@ return(
     maxLenght={maxLenght}
     onBlur={onBlur}
     fieldWidht={fieldWidht}
+    fieldHeight={fieldHeight}
+    multiline={multiline}
     />
 )
 }

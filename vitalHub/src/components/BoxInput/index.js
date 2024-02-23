@@ -4,6 +4,7 @@ import { FieldContent } from "./style"
 
 export const BoxInput = ({
     fieldWidht = 100,
+    fieldHeight = 50,
     editable = false,
     textLabel,
     placeholder,
@@ -11,11 +12,12 @@ export const BoxInput = ({
     onChangeText = null,
     keyType = 'default',
     maxLenght,
-    onBlur = null
+    onBlur = null,
+    multiline,
 }) => {
     return (
         <FieldContent
-        fieldWidht={fieldWidht}
+            fieldWidht={fieldWidht}
         >
             <Label textLabel={textLabel} />
 
@@ -27,6 +29,8 @@ export const BoxInput = ({
                 keyType={keyType}
                 maxLenght={maxLenght}
                 onBlur={onBlur}
+                fieldHeight={fieldHeight}
+                multiline={multiline}
             />
         </FieldContent>
     )

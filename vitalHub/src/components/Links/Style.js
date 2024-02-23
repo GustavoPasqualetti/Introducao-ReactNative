@@ -28,3 +28,6 @@ font-size: 14px;
 margin-top: 70px;
 `
 
+export const LinkModal = styled(LinKCancel)`
+margin-top: 40px;
+`

@@ -6,6 +6,7 @@ export const Container = styled.View`
 flex: 1;
 align-items: center;
 background-color: #ffffff;
+height: 100%;
 `
 
 export const ContentAccount = styled.View`
@@ -24,6 +25,7 @@ margin-top: 10px;
 `
 
 export const ContainerScroll = styled.ScrollView`
+height: 100%;
 
 `
 

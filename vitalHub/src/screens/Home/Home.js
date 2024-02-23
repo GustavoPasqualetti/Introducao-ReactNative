@@ -8,6 +8,7 @@ import { ContainerAppointment } from "./Style"
 import { AppointmentCard, QueryCard } from "../../components/AppointmentCard/QueryCard"
 import { ListComponent } from "../../components/List/List"
 import { CancelModal } from "../../components/CancelModal/CancelModal"
+import { AppointmentModal } from "../../components/AppointmentModal/AppointmentModal"
 
 const Consultas = [
     { id: 1, nome: "gustavo", situacao: "pendente" },
@@ -24,7 +25,7 @@ export const Home = () => {
 
     const [showModalCancel, setShowModalCancel] = useState(false)
 
-    const [showModalAppointment, setShowModalAppoointment] = useState(false)
+    const [showModalAppointment, setShowModalAppointment] = useState(false)
 
     return (
         <Container>
@@ -64,7 +65,7 @@ export const Home = () => {
                     statusList == item.situacao && (
                         <AppointmentCard
                             situacao={item.situacao}
-                            onPressAppointment={() => setShowModalAppoointment(true)}
+                            onPressAppointment={() => setShowModalAppointment(true)}
                             onPressCancel={() => setShowModalCancel(true)}
                         />
                     )
@@ -73,6 +74,11 @@ export const Home = () => {
 
             <CancelModal
             visible={showModalCancel}
+            setShowModalCancel={setShowModalCancel}
+            />
+            <AppointmentModal
+            visible={showModalAppointment}
+            setShowModalAppointment={setShowModalAppointment}
             />
         </Container>
     )

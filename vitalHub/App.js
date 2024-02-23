@@ -14,6 +14,8 @@ import { EmailCode } from './src/screens/EmailCode/EmailCode';
 import { Reset } from './src/screens/Reset/Reset';
 import { Profile } from './src/screens/Profile/Profile';
 import { Home } from './src/screens/Home/Home';
+import { InsertRecord } from './src/screens/InsertRecord/InsertRecord';
+import { HomeUser } from './src/screens/HomeUser/HomeUser';
 
 
 
@@ -71,11 +73,28 @@ export default function App() {
         options={{ title: 'Reset' }}        
         />  
 
+        <Stack.Screen 
+        name='Profile'
+        component={Profile}
+        options={{ title: 'Profile' }}        
+        />  
 
          <Stack.Screen 
         name='Home'
         component={Home}
         options={{ title: 'Home' }}        
+        />   
+        
+         <Stack.Screen 
+        name='HomeUser'
+        component={HomeUser}
+        options={{ title: 'HomeUser' }}        
+        />   
+
+         <Stack.Screen 
+        name='InsertRecord'
+        component={InsertRecord}
+        options={{ title: 'InsertRecord' }}        
         />   
       </Stack.Navigator>
 

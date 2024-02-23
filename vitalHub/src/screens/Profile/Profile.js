@@ -17,28 +17,33 @@ export const Profile = () => {
                 <BoxInput
                     fieldWidht={80}
                     textLabel='Data de nascimento:'
-                    placeholder='04/05/1999'
+                    placeholder='04/05/1999'   
+                    fieldHeight={50}     
                 />
                 <BoxInput
                     fieldWidht={80}
                     textLabel='CPF:'
                     placeholder='859********'
+                    fieldHeight={50}  
                 />
                 <BoxInput
                     fieldWidht={80}
                     textLabel='Endereço'
                     placeholder='Rua Vicenso Silva, 987'
+                    fieldHeight={50}  
                 />
                 <ContainerUF>
                     <BoxInput
                         fieldWidht={45}
                         textLabel='CEP'
                         placeholder='06548-909'
+                        fieldHeight={50}  
                     />
                     <BoxInput
                         fieldWidht={45}
                         textLabel='Cidade'
                         placeholder='Moema-SP'
+                        fieldHeight={50}  
                     />
                 </ContainerUF>
 
