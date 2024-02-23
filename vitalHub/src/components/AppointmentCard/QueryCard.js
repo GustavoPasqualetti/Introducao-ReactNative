@@ -1,24 +1,30 @@
+import { Elipse } from "../UserPicture/Style";
 import { ButtonCard, ButtonText, ClockCard, ContainerCard, ContentCard, DateProfileCard, ImageCard, ProfileData, ProfileName, TextAge, TextBold, ViewRow } from "./Style"
 import { AntDesign } from '@expo/vector-icons';
 
 export const AppointmentCard = ({
     situacao = "pendente",
     onPressAppointment,
-    onPressCancel
+    onPressCancel, 
+    name,
+    age,
+    reason,
+    hour
 }) => {
     return (
         <ContainerCard>
-            <ImageCard source={require('../../assets/niccole.png')} />
+            <ImageCard source={require('../../assets/Splash2.png')} />
 
             <ContentCard>
 
                 <DateProfileCard>
 
-                    <ProfileName>Niccole</ProfileName>
+                    <ProfileName>{name}</ProfileName>
 
                     <ProfileData>
-                        <TextAge>45</TextAge>
-                        <TextBold>Rotina</TextBold>
+                        <TextAge>{age}</TextAge>
+                        <Elipse source={require('../../assets/elipse.png')}/>
+                        <TextBold>{reason}</TextBold>
                     </ProfileData>
 
                 </DateProfileCard>
@@ -33,7 +39,7 @@ export const AppointmentCard = ({
                         <TextBold
                             situacao={situacao} 
                         >
-                            14:00</TextBold>
+                            {hour}</TextBold>
                     </ClockCard>
                     {
                         situacao == "cancelada" ? (

@@ -11,12 +11,12 @@ import { CancelModal } from "../../components/CancelModal/CancelModal"
 import { AppointmentModal } from "../../components/AppointmentModal/AppointmentModal"
 
 const Consultas = [
-    { id: 1, nome: "gustavo", situacao: "pendente" },
-    { id: 2, nome: "gabriel", situacao: "realizada" },
-    { id: 3, nome: "eduardo", situacao: "cancelada" },
-    { id: 4, nome: "joao", situacao: "realizada" },
-    { id: 5, nome: "marcelo", situacao: "pendente" },
-    { id: 6, nome: "rubens", situacao: "realizada" }
+    { id: 1, nome: "gustavo", age: 18, hour:'14:00', reason:'Rotina', situacao: "pendente" },
+    { id: 2, nome: "gabriel", age: 20, hour:'15:00', reason:'Rotina', situacao: "realizada" },
+    { id: 3, nome: "eduardo", age: 18, hour:'16:00', reason:'Rotina', situacao: "cancelada" },
+    { id: 4, nome: "joao", age: 19, hour:'17:00', reason:'Rotina', situacao: "realizada" },
+    { id: 5, nome: "marcelo", age: 22, hour:'18:00', reason:'Rotina', situacao: "pendente" },
+    { id: 6, nome: "rubens", age: 21, hour:'13:00', reason:'Rotina', situacao: "realizada" }
 ]
 
 export const Home = () => {
@@ -31,7 +31,11 @@ export const Home = () => {
         <Container>
             <StatusBar />
 
-            <Header />
+            <Header 
+            name={"Dr Eduardo"} 
+            ProfileImage={{uri: ('https://github.com/EduardoPasqualetti.png')}}
+            
+            />
 
             <CalendarHome />
 
@@ -67,6 +71,10 @@ export const Home = () => {
                             situacao={item.situacao}
                             onPressAppointment={() => setShowModalAppointment(true)}
                             onPressCancel={() => setShowModalCancel(true)}
+                            name={item.nome}
+                            age={item.age}
+                            reason={item.reason}
+                            hour={item.hour}
                         />
                     )
                 }

@@ -1,25 +1,25 @@
 import { Modal } from "react-native"
 import { ContentModal, ViewModal } from "../CancelModal/style"
 import { Title } from "../Title/Style"
-import { TextAdd, TextModal } from "../TextAdd/Style"
+import {  TextModal } from "../TextAdd/Style"
 import { Button } from "../Button/Style"
 import { ButtonTitle } from "../ButtonTitle/Style"
 import { LinkModal } from "../Links/Style"
 import { ModalImage } from "../UserPicture/Style"
 
-export const AppointmentModal = ({ visible, setShowModalAppointment, ...rest }) => {
+export const AppointmentModal = ({name, age, visible, setShowModalAppointment, ...rest }) => {
     return(
-        <Modal {...rest} visible={visible} transparent={true} animationType="fade">
+        <Modal  {...rest} visible={visible} transparent={true} animationType="fade">
             <ViewModal>
                 <ContentModal>
 
                     <ModalImage
-                    source={require('../../assets/niccole.png')}
+                    source={require('../../assets/Splash2.png')}
                     />
 
-                    <Title>Niccole Sarga</Title>
+                    <Title>{name}</Title>
 
-                    <TextModal>22 anos    niccole.sarga@gmail.com</TextModal>
+                    <TextModal>{age}    {name}@gmail.com</TextModal>
                     
 
                     <Button>

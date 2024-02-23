@@ -2,15 +2,16 @@ import { ContainerHeader } from "../Container/Style"
 import { NotiIcon } from "../Logo/Style"
 import { BoxUser, DataUser, ImageUser, NameUser, TextDefaulte} from "./style"
 
-export const Header = () => {
+export const Header = ({name,ProfileImage }) => {
     return(
 
         <ContainerHeader>
             <BoxUser>
-                <ImageUser source={require('../../assets/medico.png')}/>
+                
+                <ImageUser source={ProfileImage}/>
                 <DataUser>
                     <TextDefaulte>Bem vindo</TextDefaulte>
-                    <NameUser>Dr Claudio</NameUser>
+                    <NameUser>{name}</NameUser>
                 </DataUser>
             </BoxUser>
 

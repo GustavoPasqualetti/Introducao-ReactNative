@@ -48,3 +48,11 @@ export const ButtonSecondary = styled(Button)`
 background-color: transparent;
 `
 
+export const MakeAppointment = styled.TouchableOpacity`
+height: 100px;
+width: 100px;
+margin-bottom: 60px;
+align-self: flex-end;
+margin-right: 10px;
+`
+

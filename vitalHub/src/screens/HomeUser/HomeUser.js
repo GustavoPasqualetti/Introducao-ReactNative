@@ -1,15 +1,23 @@
+import { useState } from "react"
 import { CalendarHome } from "../../components/CalendarHome/CalendarHome"
 import { Container } from "../../components/Container/Style"
 import { Header } from "../../components/Header/Header"
-import { HeaderUser } from "../../components/HeaderUser/HeaderUser"
+import { ContainerAppointment } from "../Home/Style"
+import { ButtonTabs } from "../../components/ButtonTabs/ButtonTabs"
+import { ListComponent } from "../../components/List/List"
+import { AppointmentCard } from "../../components/AppointmentCard/QueryCard"
+import { CancelModal } from "../../components/CancelModal/CancelModal"
+import { AppointmentModal } from "../../components/AppointmentModal/AppointmentModal"
+import {  MakeAppointment } from "../../components/Button/Style"
+import { AppointmentPicture } from "../../components/UserPicture/Style"
+import { ScheduleModal } from "../../components/ScheduleModal/SchedyleModal"
+
 
 const Consultas = [
-    { id: 1, nome: "DrClaudio", situacao: "pendente" },
-    { id: 2, nome: "DrCesar", situacao: "realizada" },
-    { id: 3, nome: "DrMarcio", situacao: "cancelada" },
-    { id: 4, nome: "DrClaudio", situacao: "realizada" },
-    { id: 5, nome: "DrCesar", situacao: "pendente" },
-    { id: 6, nome: "DrMarcio", situacao: "realizada" }
+    { id: 1, nome: "DrClaudio", age: 31, hour:'10:00', reason:'Rotina', situacao: "pendente" },
+    { id: 2, nome: "DrCesar", age: 38, hour:'14:00', reason:'Rotina', situacao: "realizada" },
+    { id: 3, nome: "DrMarcio", age: 43, hour:'17:00', reason:'Rotina', situacao: "cancelada" },
+    
 ]
 
 export const HomeUser = () => {
@@ -20,9 +28,13 @@ export const HomeUser = () => {
 
     const [showModalAppointment, setShowModalAppointment] = useState(false)
 
+    const [showModalSchedule, setShowModalSchedule] = useState(false)
+
     return(
         <Container>
-            <HeaderUser/>
+            <Header name={"Gustavo"}
+            ProfileImage={{uri: ('https://github.com/GustavoPasqualetti.png')}}
+            />
 
             <CalendarHome/>
 
@@ -47,6 +59,45 @@ export const HomeUser = () => {
                 />
 
             </ContainerAppointment>
+
+            <ListComponent
+                data={Consultas}
+                keyExtractor={(item) => item.id}
+
+                renderItem={({ item }) =>
+                    statusList == item.situacao && (
+                        <AppointmentCard
+                            situacao={item.situacao}
+                            onPressAppointment={() => setShowModalAppointment(true)}
+                            onPressCancel={() => setShowModalCancel(true)}
+                            name={item.nome}
+                            age={item.age}
+                            reason={item.reason}
+                            hour={item.hour}
+                        />
+                    )
+                }
+            />
+
+            <MakeAppointment
+            onPress={() => setShowModalSchedule(true)}
+            >
+                <AppointmentPicture source={require('../../assets/appointment.png')}/>
+            </MakeAppointment>
+
+            <CancelModal
+            visible={showModalCancel}
+            setShowModalCancel={setShowModalCancel}
+            />
+            <AppointmentModal
+            visible={showModalAppointment}
+            setShowModalAppointment={setShowModalAppointment}
+            />
+            <ScheduleModal
+            visible={showModalSchedule}
+            setShowModalSchedule={setShowModalSchedule}
+            />
+            
         </Container>
     )
 }

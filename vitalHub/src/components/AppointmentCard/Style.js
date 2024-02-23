@@ -35,7 +35,9 @@ export const  ProfileName = styled(Title)`
 font-size: 16px;
 `
 export const ProfileData = styled.View`
-flex-direction: row;
+flex-direction: row; 
+gap: 10px;
+align-items: center;
 `
 
 export const TextAge = styled.Text`
