@@ -1,5 +1,6 @@
 
 import { LinearGradient } from "expo-linear-gradient"
+import { FlatList } from "react-native"
 import styled from "styled-components"
 
 export const Container = styled.View`
@@ -41,6 +42,7 @@ flex-direction: row;
 align-items:center ;
 `
 
+
 export const ContainerHeader = styled(LinearGradient).attrs({
     colors: ["#60BFC5", "#496BBA"],
     start: { x: -0.05, y: 1.08 },
@@ -59,4 +61,5 @@ export const ContainerHeader = styled(LinearGradient).attrs({
     border-radius: 0px 0px 15px 15px;
     box-shadow: 0px 4px 15px #00000014;
   `;
+
 

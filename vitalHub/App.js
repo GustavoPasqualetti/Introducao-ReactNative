@@ -16,6 +16,7 @@ import { Profile } from './src/screens/Profile/Profile';
 import { Home } from './src/screens/Home/Home';
 import { InsertRecord } from './src/screens/InsertRecord/InsertRecord';
 import { HomeUser } from './src/screens/HomeUser/HomeUser';
+import { SelectClinic } from './src/screens/SelectClinic/SelectClinic';
 
 
 
@@ -95,6 +96,12 @@ export default function App() {
         name='InsertRecord'
         component={InsertRecord}
         options={{ title: 'InsertRecord' }}        
+        />  
+
+         <Stack.Screen 
+        name='SelectClinic'
+        component={SelectClinic}
+        options={{ title: 'SelectClinic' }}        
         />   
       </Stack.Navigator>
 

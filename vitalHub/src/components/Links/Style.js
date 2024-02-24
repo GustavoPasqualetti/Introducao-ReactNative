@@ -20,6 +20,8 @@ text-decoration: underline;
 font-family: MontserratAlternates_600SemiBold;
 `
 
+
+
 export const LinkResend = styled.Text`
 color: #344F8F;
 text-decoration: underline;
@@ -29,5 +31,13 @@ margin-top: 70px;
 `
 
 export const LinkModal = styled(LinKCancel)`
+margin-top: 40px;
+`
+
+export const CancelAppointment = styled.Text`
+color: #344F8F;
+text-decoration: underline;
+font-family: MontserratAlternates_600SemiBold;
+margin-bottom: 80px;
 margin-top: 40px;
 `
