@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const ContainerCardClinic = styled.View`
 width: 90%;
@@ -11,6 +11,13 @@ gap: 5px;
 margin: 0 auto;
 
 margin-bottom: 20px;
+
+${props => props.clickButton ? css`
+    background-color: #496BBA;
+  `: css`
+    background-color: transparent;
+    border: 2px solid #607ec5;
+  `}
 `
 
 export const ClinicOpen = styled.View`

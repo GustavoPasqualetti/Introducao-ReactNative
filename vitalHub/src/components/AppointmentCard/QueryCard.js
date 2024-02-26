@@ -9,11 +9,12 @@ export const AppointmentCard = ({
     name,
     age,
     reason,
-    hour
+    hour,
+    imagem
 }) => {
     return (
         <ContainerCard>
-            <ImageCard source={require('../../assets/Splash2.png')} />
+            <ImageCard source={imagem} />
 
             <ContentCard>
 
