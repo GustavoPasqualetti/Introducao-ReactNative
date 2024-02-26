@@ -3,6 +3,8 @@ import { SubTitle, Title } from "../Title/Style"
 import { Entypo } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 import { Assessment, ClinicOpen, ContainerCardClinic, Part1, Part2, TitleAssessment, TitleSchedule } from "./Style";
+import { useState } from "react";
+
 
 export const CardClinic = ({
     nome,
@@ -10,8 +12,16 @@ export const CardClinic = ({
     avaliacao,
     funcionamento
 }) => {
+
+    const [clicked, setClicked] = useState(false); // Estado para controlar o clique
+
+    const handleClick = () => {
+        setClicked(!clicked); // Alterna o estado quando o componente é clicado
+    };
+
     return (
-        <ContainerCardClinic>
+
+        <ContainerCardClinic onPress={handleClick} clicked={clicked}>
 
             <Part1>
                 <Title>{nome}</Title>
@@ -31,5 +41,6 @@ export const CardClinic = ({
             </Part2>
 
         </ContainerCardClinic>
+
     )
 }

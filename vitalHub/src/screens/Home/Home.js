@@ -11,21 +11,20 @@ import { CancelModal } from "../../components/CancelModal/CancelModal"
 import { AppointmentModal } from "../../components/AppointmentModal/AppointmentModal"
 
 const Consultas = [
-    { id: 1, nome: "gustavo", age: 18, hour:'14:00', reason:'Rotina', situacao: "pendente" },
-    { id: 2, nome: "gabriel", age: 20, hour:'15:00', reason:'Rotina', situacao: "realizada" },
-    { id: 3, nome: "eduardo", age: 18, hour:'16:00', reason:'Rotina', situacao: "cancelada" },
-    { id: 4, nome: "joao", age: 19, hour:'17:00', reason:'Rotina', situacao: "realizada" },
-    { id: 5, nome: "marcelo", age: 22, hour:'18:00', reason:'Rotina', situacao: "pendente" },
-    { id: 6, nome: "rubens", age: 21, hour:'13:00', reason:'Rotina', situacao: "realizada" }
-]
+    { id: 1, nome: "gustavo", age: 18, hour:'14:00', reason:'Rotina', situacao: "pendente", imagem: {uri: ('https://github.com/GustavoPasqualetti.png')} },
+    { id: 2, nome: "Joao Vitor", age: 20, hour:'15:00', reason:'Rotina', situacao: "realizada", imagem: {uri: ("https://github.com/zAlves31.png")} },
+    { id: 3, nome: "eduardo", age: 18, hour:'16:00', reason:'Rotina', situacao: "realizada", imagem: {uri: ('https://github.com/EduardoPasqualetti.png')} },
+   ]
 
-export const Home = () => {
+export const Home = ({navigation}) => {
 
     const [statusList, setStatusList] = useState("pendente")
 
     const [showModalCancel, setShowModalCancel] = useState(false)
 
     const [showModalAppointment, setShowModalAppointment] = useState(false)
+
+    const [selectedAppointment, setSelectedAppointment] = useState(null);
 
     return (
         <Container>
@@ -69,12 +68,16 @@ export const Home = () => {
                     statusList == item.situacao && (
                         <AppointmentCard
                             situacao={item.situacao}
-                            onPressAppointment={() => setShowModalAppointment(true)}
+                            onPressAppointment={() => {
+                                setSelectedAppointment(item); 
+                                setShowModalAppointment(true);
+                            }}
                             onPressCancel={() => setShowModalCancel(true)}
                             name={item.nome}
                             age={item.age}
                             reason={item.reason}
                             hour={item.hour}
+                            imagem={item.imagem}
                         />
                     )
                 }
@@ -87,6 +90,8 @@ export const Home = () => {
             <AppointmentModal
             visible={showModalAppointment}
             setShowModalAppointment={setShowModalAppointment}
+            appointmentData={selectedAppointment}
+            navigation={navigation}
             />
         </Container>
     )

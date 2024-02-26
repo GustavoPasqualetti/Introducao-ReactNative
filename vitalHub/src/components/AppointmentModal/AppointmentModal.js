@@ -7,22 +7,30 @@ import { ButtonTitle } from "../ButtonTitle/Style"
 import { LinkModal } from "../Links/Style"
 import { ModalImage } from "../UserPicture/Style"
 
-export const AppointmentModal = ({name, age, visible, setShowModalAppointment, ...rest }) => {
+export const AppointmentModal = ({ navigation, appointmentData, visible, setShowModalAppointment, ...rest }) => {
+
+    onPressHandler = () => {
+        navigation.navigate("InsertRecord")
+        setShowModalAppointment(false)
+    }
+
+    const { nome, age, imagem } = appointmentData || {};
+
     return(
         <Modal  {...rest} visible={visible} transparent={true} animationType="fade">
             <ViewModal>
                 <ContentModal>
 
                     <ModalImage
-                    source={require('../../assets/Splash2.png')}
+                    source={imagem}
                     />
 
-                    <Title>{name}</Title>
+                    <Title>{nome}</Title>
 
-                    <TextModal>{age}    {name}@gmail.com</TextModal>
+                    <TextModal>{age} anos      {nome}@gmail.com</TextModal>
                     
 
-                    <Button>
+                    <Button onPress={() => {onPressHandler()}}>
                         <ButtonTitle>INSERIR PRONTUÁRIO</ButtonTitle>
                     </Button>
 

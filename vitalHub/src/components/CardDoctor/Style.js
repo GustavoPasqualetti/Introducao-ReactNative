@@ -1,12 +1,13 @@
 import styled from "styled-components"
 
-export const ContainerCardDoctor = styled.View`
+export const ContainerCardDoctor = styled.TouchableOpacity`
 width: 300px;
 height: 90px;
 background-color: #fff;
-border: 2px solid #496BBA;
 margin: 0 auto;
 margin-bottom: 20px;
+border-width: 2px;
+border-color: ${props => props.clicked ? '#496BBA' : '#fff'};
 `
 
 export const ImageCardDoctor = styled.Image`

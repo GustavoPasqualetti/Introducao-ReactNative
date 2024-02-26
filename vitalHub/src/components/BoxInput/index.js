@@ -1,6 +1,5 @@
-import { InputProfile } from "../InputProfile"
 import { Label } from "../label"
-import { FieldContent } from "./style"
+import { FieldContent, InputText } from "./style"
 
 export const BoxInput = ({
     fieldWidht = 100,
@@ -21,7 +20,7 @@ export const BoxInput = ({
         >
             <Label textLabel={textLabel} />
 
-            <InputProfile
+            <InputText
                 editable={editable}
                 placeholder={placeholder}
                 fieldValue={fieldValue}

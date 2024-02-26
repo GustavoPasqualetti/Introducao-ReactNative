@@ -1,23 +1,16 @@
 import styled, { css } from "styled-components";
 
-export const ContainerCardClinic = styled.View`
+export const ContainerCardClinic = styled.TouchableOpacity`
 width: 90%;
 height: 90px;
 background-color: #fff;
-border: 2px solid #496BBA;
 align-items: center;
 justify-content: center;
 gap: 5px;
 margin: 0 auto;
-
 margin-bottom: 20px;
-
-${props => props.clickButton ? css`
-    background-color: #496BBA;
-  `: css`
-    background-color: transparent;
-    border: 2px solid #607ec5;
-  `}
+border-width: 2px;
+border-color: ${props => props.clicked ? '#496BBA' : '#fff'};
 `
 
 export const ClinicOpen = styled.View`

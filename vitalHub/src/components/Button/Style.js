@@ -12,6 +12,10 @@ align-items: center;
 margin-top: 50;
 `
 
+export const Button2 = styled(Button)`
+margin-bottom: 40px;
+`
+
 export const ButtonGoogle = styled(Button)`
 border-radius: 5px;
 background-color: #FAFAFA;

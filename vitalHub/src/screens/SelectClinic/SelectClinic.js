@@ -15,6 +15,7 @@ const Clinicas = [
 ]
 
 export const SelectClinic = ({navigation}) => {
+    
     return (
         <Container>
             <TitleB>Selecionar clínica</TitleB>

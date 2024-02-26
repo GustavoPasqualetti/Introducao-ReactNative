@@ -34,7 +34,7 @@ export const SelectDoctor = ({ navigation }) => {
                 </ButtonTitle>
             </Button>
 
-            <CancelAppointment>Cancelar</CancelAppointment>
+            <CancelAppointment onPress={() => navigation.navigate("HomeUser")}>Cancelar</CancelAppointment>
 
         </Container>
     )
