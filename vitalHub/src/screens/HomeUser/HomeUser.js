@@ -9,8 +9,9 @@ import { AppointmentCard } from "../../components/AppointmentCard/QueryCard"
 import { CancelModal } from "../../components/CancelModal/CancelModal"
 import { AppointmentModal } from "../../components/AppointmentModal/AppointmentModal"
 import {  MakeAppointment } from "../../components/Button/Style"
-import { AppointmentPicture } from "../../components/UserPicture/Style"
 import { ScheduleModal } from "../../components/ScheduleModal/SchedyleModal"
+import { MenuBottom } from "../../components/MenuBottom/MenuBottom"
+import { FontAwesome } from '@expo/vector-icons';
 
 
 const Consultas = [
@@ -83,8 +84,10 @@ export const HomeUser = ({navigation}) => {
             <MakeAppointment
             onPress={() => setShowModalSchedule(true)}
             >
-                <AppointmentPicture source={require('../../assets/appointment.png')}/>
+                 <FontAwesome name="stethoscope" size={38} color="white" />
             </MakeAppointment>
+           
+            <MenuBottom/>
 
             <CancelModal
             visible={showModalCancel}

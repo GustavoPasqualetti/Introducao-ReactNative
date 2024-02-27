@@ -21,11 +21,6 @@ export const ScheduleModal = ({ navigation, visible, setShowModalSchedule, ...re
                     <Title>Agendar consulta</Title>
 
                     <TypeAppointment>
-                        <LabelSchedule>Informe o tipo de consulta</LabelSchedule>
-
-                        <TypeButton >
-                            <BlueTitle>Tipo de consulta</BlueTitle>
-                        </TypeButton>
 
                         <LabelSchedule>Qual o nível da consulta</LabelSchedule>
 

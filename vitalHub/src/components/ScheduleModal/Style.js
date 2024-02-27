@@ -11,6 +11,7 @@ export const LabelSchedule = styled.Text`
 font-family: 'Quicksand_600SemiBold';
 margin-bottom: 10px;
 font-size: 15px;
+margin-top: 10px;
 `
 
 export const BlueTitle = styled.Text`

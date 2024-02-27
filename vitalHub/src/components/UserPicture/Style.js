@@ -17,8 +17,3 @@ width: 4px;
 height: 4px;
 padding-top: 2px;
 `
-
-export const AppointmentPicture = styled.Image`
-width: 100%;
-height: 100%;
-`

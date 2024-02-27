@@ -9,12 +9,13 @@ margin: 20px 0px;
 
 `
 
-export const LogoGoogle = styled.Image`
+export const LogoGoogle = styled.Text`
 height: 20px;
 width: 20px;
+margin-top: 1px;
 `
 
-export const NotiIcon = styled.Image`
+export const NotiIcon = styled.View`
 height: 25px;
 width: 25px;
 margin-top: 50;

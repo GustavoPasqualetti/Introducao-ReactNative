@@ -14,7 +14,7 @@ export const AppointmentModal = ({ navigation, appointmentData, visible, setShow
         setShowModalAppointment(false)
     }
 
-    const { nome, age, imagem } = appointmentData || {};
+    const { nome, age, imagem, email } = appointmentData || {};
 
     return(
         <Modal  {...rest} visible={visible} transparent={true} animationType="fade">
@@ -27,8 +27,8 @@ export const AppointmentModal = ({ navigation, appointmentData, visible, setShow
 
                     <Title>{nome}</Title>
 
-                    <TextModal>{age} anos      {nome}@gmail.com</TextModal>
-                    
+                    <TextModal>{age} anos</TextModal>
+                    <TextModal>{email}</TextModal>
 
                     <Button onPress={() => {onPressHandler()}}>
                         <ButtonTitle>INSERIR PRONTUÁRIO</ButtonTitle>

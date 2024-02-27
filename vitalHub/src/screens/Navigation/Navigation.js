@@ -19,11 +19,7 @@ export const Navigation = ({navigation}) => {
             title="Profile"
             onPress={() => navigation.navigate("Profile")}
             />
-            <Button
-            title="InsertRecord"
-            onPress={() => navigation.navigate("InsertRecord")}
-            />
-            
+           
         </View>
     )
 }

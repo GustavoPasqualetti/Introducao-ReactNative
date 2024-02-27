@@ -9,11 +9,12 @@ import { AppointmentCard, QueryCard } from "../../components/AppointmentCard/Que
 import { ListComponent } from "../../components/List/List"
 import { CancelModal } from "../../components/CancelModal/CancelModal"
 import { AppointmentModal } from "../../components/AppointmentModal/AppointmentModal"
+import { MenuBottom } from "../../components/MenuBottom/MenuBottom"
 
 const Consultas = [
-    { id: 1, nome: "gustavo", age: 18, hour:'14:00', reason:'Rotina', situacao: "pendente", imagem: {uri: ('https://github.com/GustavoPasqualetti.png')} },
-    { id: 2, nome: "Joao Vitor", age: 20, hour:'15:00', reason:'Rotina', situacao: "realizada", imagem: {uri: ("https://github.com/zAlves31.png")} },
-    { id: 3, nome: "eduardo", age: 18, hour:'16:00', reason:'Rotina', situacao: "realizada", imagem: {uri: ('https://github.com/EduardoPasqualetti.png')} },
+    { id: 1, nome: "gustavo", age: 18, hour:'14:00', reason:'Rotina', situacao: "pendente", imagem: {uri: ('https://github.com/GustavoPasqualetti.png')}, email:"gustavopasqualetti@gmail.com"},
+    { id: 2, nome: "Joao Vitor", age: 20, hour:'15:00', reason:'Rotina', situacao: "realizada", imagem: {uri: ("https://github.com/zAlves31.png")}, email:"joaovitoralves@gmail.com" },
+    { id: 3, nome: "eduardo", age: 18, hour:'16:00', reason:'Rotina', situacao: "realizada", imagem: {uri: ('https://github.com/EduardoPasqualetti.png')}, email:"eduardopasqualetti@gmail.com" },
    ]
 
 export const Home = ({navigation}) => {
@@ -31,8 +32,8 @@ export const Home = ({navigation}) => {
             <StatusBar />
 
             <Header 
-            name={"Dr Eduardo"} 
-            ProfileImage={{uri: ('https://github.com/EduardoPasqualetti.png')}}
+            name={"Dr Claudio"} 
+            ProfileImage={require("../../assets/medico1.jpg")}
             
             />
 
@@ -82,6 +83,8 @@ export const Home = ({navigation}) => {
                     )
                 }
             />
+
+            <MenuBottom/>
 
             <CancelModal
             visible={showModalCancel}

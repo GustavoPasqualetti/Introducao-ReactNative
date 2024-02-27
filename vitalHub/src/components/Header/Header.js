@@ -1,6 +1,7 @@
 import { ContainerHeader } from "../Container/Style"
 import { NotiIcon } from "../Logo/Style"
 import { BoxUser, DataUser, ImageUser, NameUser, TextDefaulte} from "./style"
+import { Ionicons } from '@expo/vector-icons';
 
 export const Header = ({name,ProfileImage }) => {
     return(
@@ -15,7 +16,10 @@ export const Header = ({name,ProfileImage }) => {
                 </DataUser>
             </BoxUser>
 
-            <NotiIcon source={require('../../assets/noti.png')}/>
+            <NotiIcon>
+                <Ionicons name="notifications" size={26} color="white" />
+            </NotiIcon>
+            
         </ContainerHeader>
     )
 }

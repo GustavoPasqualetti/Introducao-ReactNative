@@ -53,10 +53,14 @@ background-color: transparent;
 `
 
 export const MakeAppointment = styled.TouchableOpacity`
-height: 100px;
-width: 100px;
-margin-bottom: 60px;
+height: 80px;
+width: 80px;
+margin-bottom: 30px;
 align-self: flex-end;
-margin-right: 10px;
+margin-right: 30px;
+background-color: #49B3BA;
+justify-content: center;
+align-items: center;
+border-radius: 10px;
 `
 

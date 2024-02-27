@@ -11,6 +11,7 @@ margin: 0 auto;
 margin-bottom: 20px;
 border-width: 2px;
 border-color: ${props => props.clicked ? '#496BBA' : '#fff'};
+box-shadow: 4px 4px 15px rgba(0,0,0,0.08);
 `
 
 export const ClinicOpen = styled.View`

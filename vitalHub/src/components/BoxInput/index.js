@@ -1,5 +1,4 @@
-import { Label } from "../label"
-import { FieldContent, InputText } from "./style"
+import { FieldContent, InputLabel, InputText } from "./style"
 
 export const BoxInput = ({
     fieldWidht = 100,
@@ -18,7 +17,7 @@ export const BoxInput = ({
         <FieldContent
             fieldWidht={fieldWidht}
         >
-            <Label textLabel={textLabel} />
+            <InputLabel textLabel={textLabel} />
 
             <InputText
                 editable={editable}
