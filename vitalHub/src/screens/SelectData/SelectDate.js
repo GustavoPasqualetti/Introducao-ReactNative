@@ -9,10 +9,14 @@ import { Button } from "../../components/Button/Style";
 import { ButtonTitle } from "../../components/ButtonTitle/Style";
 import { CancelAppointment } from "../../components/Links/Style";
 import SelectInput from "../../components/SelectInput/SelectInput";
+import { SummaryScheduleModal } from "../../components/SummaryAppointmentModal/SummaryShedule";
 
 export const SelectDate = ({navigation }) => {
     const [selectedDate, setSelectedDate] = useState();
     const [selectedTime, setSelectedTime] = useState();
+
+    const [showModalSummary, setShowModalSummary] = useState(false)
+
     return (
         <Container>
             <TitleB>Selecionar Data</TitleB>
@@ -27,13 +31,18 @@ export const SelectDate = ({navigation }) => {
             handleSelectedFn={setSelectedTime}
             />
 
-            <Button>
+            <Button onPress={() => setShowModalSummary(true)}>
                 <ButtonTitle>
                     CONFIRMAR
                 </ButtonTitle>
             </Button>
 
             <CancelAppointment onPress={() => navigation.navigate("HomeUser")}>Cancelar</CancelAppointment>
+
+            <SummaryScheduleModal
+            visible={showModalSummary}
+            setShowModalAppointment={setShowModalSummary}
+            />
 
         </Container>
     )
