@@ -27,6 +27,7 @@ border: 2px #60BFC5;
 border-radius: 5px;
 height: 65px;
 justify-content: center;
+width: 280px;
 `
 
 export const SmallButton = styled.TouchableOpacity`

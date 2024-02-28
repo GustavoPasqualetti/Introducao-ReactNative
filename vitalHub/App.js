@@ -18,6 +18,7 @@ import { InsertRecord } from './src/screens/InsertRecord/InsertRecord';
 import { HomeUser } from './src/screens/HomeUser/HomeUser';
 import { SelectClinic } from './src/screens/SelectClinic/SelectClinic';
 import { SelectDoctor } from './src/screens/SelectDoctor/SelectDoctor';
+import { SelectDate } from './src/screens/SelectData/SelectDate';
 
 
 
@@ -109,6 +110,12 @@ export default function App() {
         name='SelectDoctor'
         component={SelectDoctor}
         options={{ title: 'SelectDoctor' }}        
+        />   
+
+         <Stack.Screen 
+        name='SelectDate'
+        component={SelectDate}
+        options={{ title: 'SelectDate' }}        
         />   
       </Stack.Navigator>
 

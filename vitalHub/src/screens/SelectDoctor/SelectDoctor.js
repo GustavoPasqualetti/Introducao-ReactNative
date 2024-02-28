@@ -8,8 +8,8 @@ import { CancelAppointment } from "../../components/Links/Style"
 
 const Medicos = [
     { id: 1, nome: "Gustavo", especialidade: "Odontologista", foto: {uri: ('https://github.com/GustavoPasqualetti.png')} },
-    { id: 1, nome: "Eduardo", especialidade: "Cardiologista", foto: {uri: ('https://github.com/EduardoPasqualetti.png')} },
-    { id: 1, nome: "Ana", especialidade: "Pediatra", foto: require("../../assets/ana.jpg") }
+    { id: 2, nome: "Eduardo", especialidade: "Cardiologista", foto: {uri: ('https://github.com/EduardoPasqualetti.png')} },
+    { id: 3, nome: "Ana", especialidade: "Pediatra", foto: require("../../assets/ana.jpg") }
 ]
 
 export const SelectDoctor = ({ navigation }) => {
@@ -28,7 +28,7 @@ export const SelectDoctor = ({ navigation }) => {
             </ScrollView>
 
 
-            <Button>
+            <Button onPress={() => navigation.navigate("SelectDate")}>
                 <ButtonTitle>
                     CONTINUAR
                 </ButtonTitle>
