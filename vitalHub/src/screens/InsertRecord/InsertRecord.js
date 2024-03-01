@@ -10,7 +10,7 @@ import { ButtonEdit } from "./Style"
 export const InsertRecord = () => {
 
     const [RecordEdit, setRecordEdit] = useState(true)
-
+ 
     return (
         <ContainerScroll>
 

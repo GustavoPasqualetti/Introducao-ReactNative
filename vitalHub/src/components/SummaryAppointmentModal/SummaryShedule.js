@@ -5,13 +5,16 @@ import { LabelSchedule } from "../ScheduleModal/Style"
 import { BoxSchedule, CancelSchedule, SubTitleSchedule } from "./Style"
 import { Button } from "../Button/Style"
 import { ButtonTitle } from "../ButtonTitle/Style"
-import { CancelAppointment } from "../Links/Style"
+
 
 export const SummaryScheduleModal = ({
-    visible, setShowModalSummary, ...rest
+    navigation, visible, setShowModalSummary, ...rest
 }) => {
 
-
+const onPressHandler = () => {
+    navigation.navigate("SelectDate")
+    setShowModalSummary(false)
+};
 
     return (
         <Modal {...rest} visible={visible} transparent={true} animationType="fade">
@@ -44,8 +47,7 @@ export const SummaryScheduleModal = ({
                         </ButtonTitle>
                     </Button>
 
-                    <CancelSchedule>Cancelar</CancelSchedule>
-
+                    <CancelSchedule onPress={() => {onPressHandler()}}>Cancelar</CancelSchedule>
 
                 </ContentModal>
             </ViewModal>

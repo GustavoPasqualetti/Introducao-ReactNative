@@ -9,10 +9,13 @@ import { useState } from "react"
 
 export const Profile = () => {
 
-    const [ProfileEdit, setProfileEdit] = useState()
+    const [ProfileEdit, setProfileEdit] = useState(true)
 
     return (
         <ContainerScroll>
+
+            {ProfileEdit ? (
+            <>
             <UserPicture source={require('../../assets/paciente.png')} />
             <ContainerProfile>
                 <Title>Richard Kosta</Title>
@@ -22,7 +25,8 @@ export const Profile = () => {
                     fieldWidht={80}
                     textLabel='Data de nascimento:'
                     placeholder='04/05/1999'   
-                    fieldHeight={60}     
+                    fieldHeight={60}
+                    
                 />
                 <BoxInput
                     fieldWidht={80}
@@ -56,11 +60,70 @@ export const Profile = () => {
                     <ButtonTitle>SALVAR</ButtonTitle>
                 </Button>
 
+                <Button2 onPress={() => setProfileEdit(false)}>
+                    <ButtonTitle>EDITAR</ButtonTitle>
+                </Button2>
+
+            </ContainerProfile>
+            </>
+            ) : (
+            <>
+            <UserPicture source={require('../../assets/paciente.png')} />
+            <ContainerProfile>
+                <Title>Richard Kosta</Title>
+                <TextAdd>22 anos      richard.kosta@gmail.com</TextAdd>
+
+                <BoxInput
+                    fieldWidht={80}
+                    textLabel='Data de nascimento:'
+                    placeholder='04/05/1999'   
+                    fieldHeight={60}
+                    editable={true}
+                />
+                <BoxInput
+                    fieldWidht={80}
+                    textLabel='CPF:'
+                    placeholder='859********'
+                    fieldHeight={60}
+                    editable={true}
+                />
+                <BoxInput
+                    fieldWidht={80}
+                    textLabel='Endereço'
+                    placeholder='Rua Vicenso Silva, 987'
+                    fieldHeight={60}
+                    editable={true}
+                />
+                <ContainerUF>
+                    <BoxInput
+                        fieldWidht={45}
+                        textLabel='CEP'
+                        placeholder='06548-909'
+                        fieldHeight={60}  
+                    />
+                    <BoxInput
+                        fieldWidht={45}
+                        textLabel='Cidade'
+                        placeholder='Moema-SP'
+                        fieldHeight={60}
+                        editable={true}  
+                    />
+                </ContainerUF>
+
+
+                <Button>
+                    <ButtonTitle>SALVAR</ButtonTitle>
+                </Button>
+
                 <Button2>
                     <ButtonTitle>EDITAR</ButtonTitle>
                 </Button2>
 
             </ContainerProfile>
+            </>
+            )}
+
+           
         </ContainerScroll>
     )
 }

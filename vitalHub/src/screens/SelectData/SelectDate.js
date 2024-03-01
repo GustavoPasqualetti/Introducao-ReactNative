@@ -41,7 +41,8 @@ export const SelectDate = ({navigation }) => {
 
             <SummaryScheduleModal
             visible={showModalSummary}
-            setShowModalAppointment={setShowModalSummary}
+            setShowModalSummary={setShowModalSummary}
+            navigation={navigation}
             />
 
         </Container>
