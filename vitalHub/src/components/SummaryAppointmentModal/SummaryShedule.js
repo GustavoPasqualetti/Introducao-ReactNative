@@ -49,6 +49,7 @@ const onPressHandler = () => {
 
                     <CancelSchedule onPress={() => {onPressHandler()}}>Cancelar</CancelSchedule>
 
+
                 </ContentModal>
             </ViewModal>
         </Modal>

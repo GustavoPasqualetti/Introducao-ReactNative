@@ -6,6 +6,7 @@ export const AppointmentCard = ({
     situacao = "pendente",
     onPressAppointment,
     onPressCancel, 
+    onPressLocal,
     name,
     age,
     reason,
@@ -13,7 +14,7 @@ export const AppointmentCard = ({
     imagem
 }) => {
     return (
-        <ContainerCard>
+        <ContainerCard onPress={onPressLocal}>
             <ImageCard source={imagem} />
 
             <ContentCard>

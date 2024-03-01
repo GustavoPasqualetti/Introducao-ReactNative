@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Title } from "../Title/Style";
 
-export const ContainerCard = styled.View`
+export const ContainerCard = styled.TouchableOpacity`
 width: 90%;
 height: 102px;
 

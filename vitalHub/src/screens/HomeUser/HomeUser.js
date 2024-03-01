@@ -8,20 +8,21 @@ import { ListComponent } from "../../components/List/List"
 import { AppointmentCard } from "../../components/AppointmentCard/QueryCard"
 import { CancelModal } from "../../components/CancelModal/CancelModal"
 import { AppointmentModal } from "../../components/AppointmentModal/AppointmentModal"
-import {  MakeAppointment } from "../../components/Button/Style"
+import { MakeAppointment } from "../../components/Button/Style"
 import { ScheduleModal } from "../../components/ScheduleModal/SchedyleModal"
 import { MenuBottom } from "../../components/MenuBottom/MenuBottom"
 import { FontAwesome } from '@expo/vector-icons';
+import { LocalModal } from "../../components/LocalModal/LocalModal"
 
 
 const Consultas = [
-    { id: 1, nome: "DrClaudio", age: 31, hour:'10:00', reason:'Rotina', situacao: "pendente", imagem: require("../../assets/medico1.jpg") },
-    { id: 2, nome: "DrCesar", age: 38, hour:'14:00', reason:'Rotina', situacao: "realizada", imagem: require("../../assets/medico2.jpg") },
-    { id: 3, nome: "DrMarcio", age: 43, hour:'17:00', reason:'Rotina', situacao: "cancelada", imagem: require("../../assets/medico3.webp") },
-    
+    { id: 1, nome: "DrClaudio", age: 31, hour: '10:00', reason: 'Rotina', situacao: "pendente", imagem: require("../../assets/medico1.jpg") },
+    { id: 2, nome: "DrCesar", age: 38, hour: '14:00', reason: 'Rotina', situacao: "realizada", imagem: require("../../assets/medico2.jpg") },
+    { id: 3, nome: "DrMarcio", age: 43, hour: '17:00', reason: 'Rotina', situacao: "cancelada", imagem: require("../../assets/medico3.webp") },
+
 ]
 
-export const HomeUser = ({navigation}) => {
+export const HomeUser = ({ navigation }) => {
 
     const [statusList, setStatusList] = useState("pendente")
 
@@ -31,13 +32,15 @@ export const HomeUser = ({navigation}) => {
 
     const [showModalSchedule, setShowModalSchedule] = useState(false)
 
-    return(
+    const [showModalLocal, setShowModalLocal] = useState(false)
+
+    return (
         <Container>
             <Header name={"Gustavo"}
-            ProfileImage={{uri: ('https://github.com/GustavoPasqualetti.png')}}
+                ProfileImage={{ uri: ('https://github.com/GustavoPasqualetti.png') }}
             />
 
-            <CalendarHome/>
+            <CalendarHome />
 
             <ContainerAppointment>
 
@@ -71,6 +74,7 @@ export const HomeUser = ({navigation}) => {
                             situacao={item.situacao}
                             onPressAppointment={() => setShowModalAppointment(true)}
                             onPressCancel={() => setShowModalCancel(true)}
+                            onPressLocal={() => setShowModalLocal(true)}
                             name={item.nome}
                             age={item.age}
                             reason={item.reason}
@@ -82,27 +86,32 @@ export const HomeUser = ({navigation}) => {
             />
 
             <MakeAppointment
-            onPress={() => setShowModalSchedule(true)}
+                onPress={() => setShowModalSchedule(true)}
             >
-                 <FontAwesome name="stethoscope" size={38} color="white" />
+                <FontAwesome name="stethoscope" size={38} color="white" />
             </MakeAppointment>
-           
-            <MenuBottom/>
+
+            <MenuBottom />
 
             <CancelModal
-            visible={showModalCancel}
-            setShowModalCancel={setShowModalCancel}
+                visible={showModalCancel}
+                setShowModalCancel={setShowModalCancel}
             />
             <AppointmentModal
-            visible={showModalAppointment}
-            setShowModalAppointment={setShowModalAppointment}
+                visible={showModalAppointment}
+                setShowModalAppointment={setShowModalAppointment}
             />
             <ScheduleModal
-            visible={showModalSchedule}
-            navigation={navigation}
-            setShowModalSchedule={setShowModalSchedule}
+                visible={showModalSchedule}
+                navigation={navigation}
+                setShowModalSchedule={setShowModalSchedule}
             />
-            
+            <LocalModal
+                visible={showModalLocal}
+                navigation={navigation}
+                setShowModalLocal={setShowModalLocal}
+            />
+
         </Container>
     )
 }
