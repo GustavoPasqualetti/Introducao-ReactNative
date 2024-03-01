@@ -1,6 +1,6 @@
 import { Modal } from "react-native"
 import { ContentModal, ViewModal } from "../CancelModal/style"
-import {  TextModal } from "../TextAdd/Style"
+import { TextModal } from "../TextAdd/Style"
 import { Button } from "../Button/Style"
 import { ButtonTitle } from "../ButtonTitle/Style"
 import { LinkModal } from "../Links/Style"
@@ -9,32 +9,37 @@ import { Title } from "../Title/Style"
 
 export const LocalModal = ({ navigation, appointmentData, visible, setShowModalLocal, ...rest }) => {
 
-     const { nome, crm, imagem, especialidade } = appointmentData || {};
+    const { nome, crm, imagem, especialidade } = appointmentData || {};
 
     onPressHandler = () => {
         navigation.navigate("HomeUser")
         setShowModalLocal(false)
     }
 
-    return(
+    onPressContinue = () => {
+        navigation.navigate("LocalAppointment")
+        setShowModalLocal(false)
+    }
+
+    return (
         <Modal  {...rest} visible={visible} transparent={true} animationType="fade">
             <ViewModal>
                 <ContentModal>
 
                     <ModalImage
-                    source={imagem}
+                        source={imagem}
                     />
 
                     <Title>{nome}</Title>
 
                     <TextModal>{especialidade}    {crm}</TextModal>
 
-                    <Button >
+                    <Button onPress={() => {onPressContinue()}}>
                         <ButtonTitle>Ver local da consulta</ButtonTitle>
                     </Button>
 
-                    <LinkModal onPress={() => {onPressHandler()}}>
-                    Cancelar
+                    <LinkModal onPress={() => { onPressHandler() }}>
+                        Cancelar
                     </LinkModal>
 
 

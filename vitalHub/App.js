@@ -19,6 +19,8 @@ import { HomeUser } from './src/screens/HomeUser/HomeUser';
 import { SelectClinic } from './src/screens/SelectClinic/SelectClinic';
 import { SelectDoctor } from './src/screens/SelectDoctor/SelectDoctor';
 import { SelectDate } from './src/screens/SelectData/SelectDate';
+import { LocalAppointment } from './src/screens/LocalAppointment/LocalAppointment';
+import { ViewPrescription } from './src/screens/ViewPrescription/ViewPrecription';
 
 
 
@@ -116,6 +118,18 @@ export default function App() {
         name='SelectDate'
         component={SelectDate}
         options={{ title: 'SelectDate' }}        
+        />   
+
+         <Stack.Screen 
+        name='LocalAppointment'
+        component={LocalAppointment}
+        options={{ title: 'LocalAppointment' }}        
+        />   
+
+         <Stack.Screen 
+        name='ViewPrescription'
+        component={ViewPrescription}
+        options={{ title: 'ViewPrescription' }}        
         />   
       </Stack.Navigator>
 

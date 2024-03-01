@@ -17,7 +17,7 @@ export const BoxInput = ({
         <FieldContent
             fieldWidht={fieldWidht}
         >
-            <InputLabel textLabel={textLabel} />
+            <InputLabel>{textLabel}</InputLabel>
 
             <InputText
                 editable={editable}
