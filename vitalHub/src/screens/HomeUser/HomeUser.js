@@ -16,9 +16,9 @@ import { LocalModal } from "../../components/LocalModal/LocalModal"
 
 
 const Consultas = [
-    { id: 1, nome: "DrClaudio", age: 31, hour: '10:00', reason: 'Rotina', situacao: "pendente", imagem: require("../../assets/medico1.jpg") },
-    { id: 2, nome: "DrCesar", age: 38, hour: '14:00', reason: 'Rotina', situacao: "realizada", imagem: require("../../assets/medico2.jpg") },
-    { id: 3, nome: "DrMarcio", age: 43, hour: '17:00', reason: 'Rotina', situacao: "cancelada", imagem: require("../../assets/medico3.webp") },
+    { id: 1, nome: "DrClaudio", crm: "13456", especialidade: "Clinico Geral", age: 31, hour: '10:00', reason: 'Rotina', situacao: "pendente", imagem: require("../../assets/medico1.jpg") },
+    { id: 2, nome: "DrCesar", crm: "12690", especialidade: "Ortopedista", age: 38, hour: '14:00', reason: 'Rotina', situacao: "realizada", imagem: require("../../assets/medico2.jpg") },
+    { id: 3, nome: "DrMarcio", crm: "26647", especialidade: "Cardiologista", age: 43, hour: '17:00', reason: 'Rotina', situacao: "cancelada", imagem: require("../../assets/medico3.webp") },
 
 ]
 
@@ -33,6 +33,8 @@ export const HomeUser = ({ navigation }) => {
     const [showModalSchedule, setShowModalSchedule] = useState(false)
 
     const [showModalLocal, setShowModalLocal] = useState(false)
+
+    const [selectedAppointment, setSelectedAppointment] = useState(null);
 
     return (
         <Container>
@@ -74,12 +76,17 @@ export const HomeUser = ({ navigation }) => {
                             situacao={item.situacao}
                             onPressAppointment={() => setShowModalAppointment(true)}
                             onPressCancel={() => setShowModalCancel(true)}
-                            onPressLocal={() => setShowModalLocal(true)}
+                            onPressLocal={() => {
+                                setShowModalLocal(true)
+                                setSelectedAppointment(item); 
+                            } }
                             name={item.nome}
+                            especialidade={item.especialidade}
+                            imagem={item.imagem}
+                            crm={item.crm}
                             age={item.age}
                             reason={item.reason}
                             hour={item.hour}
-                            imagem={item.imagem}
                         />
                     )
                 }
@@ -110,6 +117,7 @@ export const HomeUser = ({ navigation }) => {
                 visible={showModalLocal}
                 navigation={navigation}
                 setShowModalLocal={setShowModalLocal}
+                appointmentData={selectedAppointment}
             />
 
         </Container>

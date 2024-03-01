@@ -9,7 +9,7 @@ import { Title } from "../Title/Style"
 
 export const LocalModal = ({ navigation, appointmentData, visible, setShowModalLocal, ...rest }) => {
 
-    // const { nome, age, imagem, email } = appointmentData || {};
+     const { nome, crm, imagem, especialidade } = appointmentData || {};
 
     onPressHandler = () => {
         navigation.navigate("HomeUser")
@@ -22,12 +22,12 @@ export const LocalModal = ({ navigation, appointmentData, visible, setShowModalL
                 <ContentModal>
 
                     <ModalImage
-                    source={require("../../assets/medico1.jpg")}
+                    source={imagem}
                     />
 
-                    <Title>Clínica Natureh</Title>
+                    <Title>{nome}</Title>
 
-                    <TextModal>Cliníco geral   CRM-15286</TextModal>
+                    <TextModal>{especialidade}    {crm}</TextModal>
 
                     <Button >
                         <ButtonTitle>Ver local da consulta</ButtonTitle>
