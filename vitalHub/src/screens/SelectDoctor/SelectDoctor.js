@@ -7,9 +7,11 @@ import { TitleB } from "../../components/Title/Style"
 import { CancelAppointment } from "../../components/Links/Style"
 
 const Medicos = [
-    { id: 1, nome: "Gustavo", especialidade: "Odontologista", foto: {uri: ('https://github.com/GustavoPasqualetti.png')} },
-    { id: 2, nome: "Eduardo", especialidade: "Cardiologista", foto: {uri: ('https://github.com/EduardoPasqualetti.png')} },
-    { id: 3, nome: "Ana", especialidade: "Pediatra", foto: require("../../assets/ana.jpg") }
+    { id: 1, nome: "DrClaudio", especialidade: "Clinico Geral", foto: require("../../assets/medico1.jpg") },
+    { id: 2, nome: "DrCesar", especialidade: "Ortopedista", foto: require("../../assets/medico2.jpg") },
+    { id: 3, nome: "DrMarcio", especialidade: "Cardiologista", foto: require("../../assets/medico3.webp") },
+    { id: 4, nome: "DrAndre", especialidade: "Clinico Geral", foto: require("../../assets/medico4.jpg") }
+
 ]
 
 export const SelectDoctor = ({ navigation }) => {

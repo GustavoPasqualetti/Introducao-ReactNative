@@ -12,6 +12,7 @@ export const BoxInput = ({
     maxLenght,
     onBlur = null,
     multiline,
+    keyboardType
 }) => {
     return (
         <FieldContent
@@ -29,6 +30,8 @@ export const BoxInput = ({
                 onBlur={onBlur}
                 fieldHeight={fieldHeight}
                 multiline={multiline}
+                keyboardType={keyboardType}
+                
             />
         </FieldContent>
     )

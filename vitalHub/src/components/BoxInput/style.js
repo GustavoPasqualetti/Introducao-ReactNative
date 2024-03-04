@@ -9,7 +9,9 @@ gap: 10px;
 `
 
 
-export const InputText = styled.TextInput`
+export const InputText = styled.TextInput.attrs(props => ({
+    placeholderTextColor: '#4E4B59'
+ }) )`
 width: ${props => `${props.fieldWidht}%`};
 height: ${props => `${props.fieldHeight}px`};
 background-color: #F5F3F3;

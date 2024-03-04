@@ -19,7 +19,7 @@ const Consultas = [
     { id: 1, nome: "DrClaudio", crm: "13456", especialidade: "Clinico Geral", age: 52, hour: '10:00', reason: 'Rotina', situacao: "pendente", imagem: require("../../assets/medico1.jpg") },
     { id: 2, nome: "DrCesar", crm: "12690", especialidade: "Ortopedista", age: 35, hour: '14:00', reason: 'Rotina', situacao: "realizada", imagem: require("../../assets/medico2.jpg") },
     { id: 3, nome: "DrMarcio", crm: "26647", especialidade: "Cardiologista", age: 43, hour: '17:00', reason: 'Rotina', situacao: "cancelada", imagem: require("../../assets/medico3.webp") },
-
+    { id: 4, nome: "DrAndre", crm: "21589", especialidade: "Clinico Geral", age: 52, hour: '10:00', reason: 'Rotina', situacao: "pendente", imagem: require("../../assets/medico4.jpg") }
 ]
 
 export const HomeUser = ({ navigation }) => {

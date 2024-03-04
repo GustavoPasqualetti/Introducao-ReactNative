@@ -20,3 +20,8 @@ margin-top: 80px;
 margin-bottom: 40px;
 `
 
+export const TitleC = styled(Title)`
+margin-top: 20px;
+margin-bottom: 8px;
+`
+
