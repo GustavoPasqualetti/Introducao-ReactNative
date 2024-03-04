@@ -35,7 +35,10 @@ position: absolute;
 margin-top: 80px;
 align-self: flex-start;
 margin-left: 15px;
-
+background-color: #A1D9DC;
+justify-content: center;
+align-items: center;
+border-radius: 50px;
 `
 
 export const IconReturn = styled.Image`

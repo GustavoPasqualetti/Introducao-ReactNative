@@ -6,11 +6,13 @@ import { Button, Button2 } from "../../components/Button/Style"
 import { ButtonTitle } from "../../components/ButtonTitle/Style"
 import { useState } from "react"
 import { ButtonEdit } from "./Style"
+import { TitleC } from "../../components/Title/Style"
+import { TextAdd } from "../../components/TextAdd/Style"
 
 export const InsertRecord = () => {
 
     const [RecordEdit, setRecordEdit] = useState(true)
- 
+
     return (
         <ContainerScroll>
 
@@ -19,6 +21,10 @@ export const InsertRecord = () => {
                     <Container>
 
                         <UserPicture source={{ uri: "https://github.com/zAlves31.png" }} />
+
+                        <TitleC>Joao</TitleC>
+                        <TextAdd>joaovictoralves@gmail.com</TextAdd>
+
                         <BoxInput
                             fieldWidht={80}
                             textLabel='Descrição da consulta'
@@ -102,7 +108,7 @@ export const InsertRecord = () => {
                             </ButtonTitle>
                         </ButtonEdit>
 
-                       
+
 
                     </Container>
                 </>

@@ -1,7 +1,7 @@
 import { BoxInput } from "../../components/BoxInput"
 import { ContainerProfile, ContainerScroll, ContainerUF } from "../../components/Container/Style"
 import { TextAdd } from "../../components/TextAdd/Style"
-import { Title } from "../../components/Title/Style"
+import { TitleC } from "../../components/Title/Style"
 import { UserPicture } from "../../components/UserPicture/Style"
 import { ButtonTitle } from "../../components/ButtonTitle/Style"
 import { Button, Button2 } from "../../components/Button/Style"
@@ -16,10 +16,10 @@ export const Profile = () => {
 
             {ProfileEdit ? (
             <>
-            <UserPicture source={require('../../assets/paciente.png')} />
+            <UserPicture source={{ uri: ('https://github.com/GustavoPasqualetti.png') }} />
             <ContainerProfile>
-                <Title>Richard Kosta</Title>
-                <TextAdd>22 anos      richard.kosta@gmail.com</TextAdd>
+                <TitleC>Gustavo Pasqualetti</TitleC>
+                <TextAdd>gustavopasqualetti@gmail.com</TextAdd>
 
                 <BoxInput
                     fieldWidht={80}

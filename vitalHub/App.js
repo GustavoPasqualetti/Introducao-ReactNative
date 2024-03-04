@@ -22,7 +22,7 @@ import { SelectDate } from './src/screens/SelectData/SelectDate';
 import { LocalAppointment } from './src/screens/LocalAppointment/LocalAppointment';
 import { ViewPrescription } from './src/screens/ViewPrescription/ViewPrecription';
 
-
+console.disableYellowBox = true;
 
 export default function App() {
 
@@ -33,7 +33,7 @@ export default function App() {
   if (!fontsLoaded && !fontsError) {
     return null
   }
-
+  
   return (
  
     <NavigationContainer>

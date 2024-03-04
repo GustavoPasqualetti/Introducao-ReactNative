@@ -6,12 +6,13 @@ import { LinkResend } from "../../components/Links/Style"
 import { Logo } from "../../components/Logo/Style"
 import { TextAdd, TextUser, TextUserBlue } from "../../components/TextAdd/Style"
 import { Title } from "../../components/Title/Style"
+import { AntDesign } from '@expo/vector-icons';
 
 export const EmailCode = ({navigation}) => {
     return (
         <Container>
             <ButtonIcon onPress={() => navigation.navigate("Login")}>
-                <IconClose source={require("../../assets/x.png")}/>
+            <AntDesign name="close" size={32} color="#34898F" />
             </ButtonIcon>
             
             <Logo source={require('../../assets/logo.png')} />

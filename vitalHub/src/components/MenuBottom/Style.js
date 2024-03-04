@@ -12,7 +12,7 @@ gap: 50px;
 
 `
 
-export const ScheduleBox = styled.View`
+export const ScheduleBox = styled.TouchableOpacity`
 height: 70px;
 width: 80px;
 justify-content: center;
@@ -29,7 +29,7 @@ color: #607EC5;
 font-family: Quicksand_500Medium;
 `
 
-export const UserBox = styled.View`
+export const UserBox = styled.TouchableOpacity`
 height: 70px;
 width: 80px;
 justify-content: center;
@@ -43,7 +43,7 @@ font-size: 16px;
 color: #4E4B59;
 font-family: Quicksand_500Medium;
 `
-export const ClinicBox = styled.View`
+export const ClinicBox = styled.TouchableOpacity`
 height: 70px;
 width: 80px;
 justify-content: center;

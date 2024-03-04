@@ -3,7 +3,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
 
 
-export const MenuBottom = () => {
+export const MenuBottom = ({navigation}) => {
     return (
 
         <ContainerMenu>
@@ -18,7 +18,7 @@ export const MenuBottom = () => {
                 <TitleBoxUser>Clinicas</TitleBoxUser>
             </ClinicBox>
 
-            <UserBox>
+            <UserBox onPress={() => navigation.navigate("Profile")}>
                 <FontAwesome5 name="user-circle" size={22} color="#4E4B59" />
                 <TitleBoxUser>Perfil</TitleBoxUser>
             </UserBox>

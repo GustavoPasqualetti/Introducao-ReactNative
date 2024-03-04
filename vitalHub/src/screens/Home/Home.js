@@ -84,7 +84,9 @@ export const Home = ({navigation}) => {
                 }
             />
 
-            <MenuBottom/>
+            <MenuBottom
+            navigation={navigation}
+            />
 
             <CancelModal
             visible={showModalCancel}

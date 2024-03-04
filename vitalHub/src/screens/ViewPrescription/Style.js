@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const ContainerSubTitle = styled.View`
 flex-direction: row;
 gap: 20px;
+margin-bottom: 15px;
 `
 
 export const Line = styled.View`
