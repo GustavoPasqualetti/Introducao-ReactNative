@@ -8,18 +8,11 @@ export const Navigation = ({navigation}) => {
             onPress={() => navigation.navigate("Login")}
             />
             <Button
-            title="Home"
-            onPress={() => navigation.navigate("Home")}
-            />
-            <Button
-            title="HomeUser"
-            onPress={() => navigation.navigate("HomeUser")}
-            />
-            <Button
             title="ViewPrescription"
             onPress={() => navigation.navigate("ViewPrescription")}
             />
            
-        </View>
+           
+        </View> 
     )
 }

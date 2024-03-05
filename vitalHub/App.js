@@ -21,6 +21,7 @@ import { SelectDoctor } from './src/screens/SelectDoctor/SelectDoctor';
 import { SelectDate } from './src/screens/SelectData/SelectDate';
 import { LocalAppointment } from './src/screens/LocalAppointment/LocalAppointment';
 import { ViewPrescription } from './src/screens/ViewPrescription/ViewPrecription';
+import { Main } from './src/screens/Main/Main';
 
 console.disableYellowBox = true;
 
@@ -42,17 +43,24 @@ export default function App() {
         headerShown: false
       }}>
 
+        
+        <Stack.Screen 
+        name='Login'
+        component={login}
+        options={{ title: 'Login' }}        
+        />
+
+        <Stack.Screen
+        name="Main"
+        component={Main}
+        />
+
         <Stack.Screen 
         name='Navegacao'
         component={Navigation}
         options={{ title: 'Navegacao' }}
         />
 
-        <Stack.Screen 
-        name='Login'
-        component={login}
-        options={{ title: 'Login' }}        
-        />
 
         <Stack.Screen 
         name='Account'

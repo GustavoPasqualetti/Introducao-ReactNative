@@ -6,7 +6,7 @@ height: 120px;
 
 align-self: center;
 margin: 20px 0px;
-
+margin-top: 80px;
 `
 
 export const LogoGoogle = styled.Text`

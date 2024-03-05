@@ -98,9 +98,9 @@ export const HomeUser = ({ navigation }) => {
                 <FontAwesome name="stethoscope" size={38} color="white" />
             </MakeAppointment>
 
-            <MenuBottom 
+            {/* <MenuBottom 
             navigation={navigation}
-            />
+            /> */}
 
             <CancelModal
                 visible={showModalCancel}

@@ -32,7 +32,7 @@ export const ButtonIcon = styled.TouchableOpacity`
 height: 40px;
 width: 40px;
 position: absolute;
-margin-top: 80px;
+margin-top: 90px;
 align-self: flex-start;
 margin-left: 15px;
 background-color: #A1D9DC;
@@ -58,7 +58,7 @@ background-color: transparent;
 export const MakeAppointment = styled.TouchableOpacity`
 height: 80px;
 width: 80px;
-margin-bottom: 30px;
+margin-bottom: 20px;
 align-self: flex-end;
 margin-right: 30px;
 background-color: #49B3BA;

@@ -41,7 +41,7 @@ const onPressHandler = () => {
                         <SubTitle>Rotina</SubTitle>
                     </BoxSchedule>
 
-                    <Button>
+                    <Button onPress={() => navigation.navigate("HomeUser")}>
                         <ButtonTitle>
                             CONFIRMAR
                         </ButtonTitle>
