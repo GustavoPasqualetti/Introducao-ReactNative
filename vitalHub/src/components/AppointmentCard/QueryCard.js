@@ -1,6 +1,7 @@
 import { Elipse } from "../UserPicture/Style";
 import { ButtonCard, ButtonText, ClockCard, ContainerCard, ContentCard, DateProfileCard, ImageCard, ProfileData, ProfileName, TextAge, TextBold, ViewRow } from "./Style"
 import { AntDesign } from '@expo/vector-icons';
+import { FontAwesome } from '@expo/vector-icons';
 
 export const AppointmentCard = ({
     situacao = "pendente",
@@ -25,7 +26,7 @@ export const AppointmentCard = ({
 
                     <ProfileData>
                         <TextAge>{age}</TextAge>
-                        <Elipse source={require('../../assets/elipse.png')}/>
+                           <FontAwesome name="circle" size={6} color="#D9D9D9" />  
                         <TextBold>{reason}</TextBold>
                     </ProfileData>
 
