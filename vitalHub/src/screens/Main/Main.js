@@ -1,5 +1,4 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
-import { HomeUser } from "../HomeUser/HomeUser"
 import { Home } from "../Home/Home"
 import { Profile } from "../Profile/Profile"
 import { MaterialCommunityIcons } from '@expo/vector-icons';

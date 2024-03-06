@@ -13,7 +13,6 @@ import { Reset } from './src/screens/Reset/Reset';
 import { Profile } from './src/screens/Profile/Profile';
 import { Home } from './src/screens/Home/Home';
 import { InsertRecord } from './src/screens/InsertRecord/InsertRecord';
-import { HomeUser } from './src/screens/HomeUser/HomeUser';
 import { SelectClinic } from './src/screens/SelectClinic/SelectClinic';
 import { SelectDoctor } from './src/screens/SelectDoctor/SelectDoctor';
 import { SelectDate } from './src/screens/SelectData/SelectDate';
@@ -90,13 +89,7 @@ export default function App() {
         name='Home'
         component={Home}
         options={{ title: 'Home' }}        
-        />   
-        
-         <Stack.Screen 
-        name='HomeUser'
-        component={HomeUser}
-        options={{ title: 'HomeUser' }}        
-        />   
+        />     
 
          <Stack.Screen 
         name='InsertRecord'
