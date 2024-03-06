@@ -37,7 +37,7 @@ export const SelectDate = ({navigation }) => {
                 </ButtonTitle>
             </Button>
 
-            <CancelAppointment onPress={() => navigation.navigate("HomeUser")}>Cancelar</CancelAppointment>
+            <CancelAppointment onPress={() => navigation.replace("HomeUser")}>Cancelar</CancelAppointment>
 
             <SummaryScheduleModal
             visible={showModalSummary}

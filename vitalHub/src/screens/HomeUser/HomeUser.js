@@ -70,25 +70,56 @@ export const HomeUser = ({ navigation }) => {
                 data={Consultas}
                 keyExtractor={(item) => item.id}
 
-                renderItem={({ item }) =>
-                    statusList == item.situacao && (
-                        <AppointmentCard
-                            situacao={item.situacao}
-                            onPressAppointment={() => setShowModalAppointment(true)}
-                            onPressCancel={() => setShowModalCancel(true)}
-                            onPressLocal={() => {
-                                setShowModalLocal(true)
-                                setSelectedAppointment(item); 
-                            } }
-                            name={item.nome}
-                            especialidade={item.especialidade}
-                            imagem={item.imagem}
-                            crm={item.crm}
-                            age={item.age}
-                            reason={item.reason}
-                            hour={item.hour}
-                        />
-                    )
+                renderItem={({ item }) =>{
+                    if (statusList === 'pendente' && item.situacao === 'pendente') {
+                        return (
+                            <AppointmentCard
+                                situacao={item.situacao}
+                                onPressAppointment={() => setShowModalAppointment(true)}
+                                onPressCancel={() => setShowModalCancel(true)}
+                                onPressLocal={() => {
+                                    setShowModalLocal(true);
+                                    setSelectedAppointment(item);
+                                }}
+                                name={item.nome}
+                                especialidade={item.especialidade}
+                                imagem={item.imagem}
+                                crm={item.crm}
+                                age={item.age}
+                                reason={item.reason}
+                                hour={item.hour}
+                            />
+                        );
+                    } if(statusList === 'realizada' && item.situacao === 'realizada') {
+                        return (
+                            <AppointmentCard
+                                situacao={item.situacao}
+                                onPressLocal={() => navigation.navigate("ViewPrescription")}
+                                name={item.nome}
+                                especialidade={item.especialidade}
+                                imagem={item.imagem}
+                                crm={item.crm}
+                                age={item.age}
+                                reason={item.reason}
+                                hour={item.hour}
+                            />
+                        );
+                    } if(statusList === 'cancelada' && item.situacao === 'cancelada') {
+                        return (
+                            <AppointmentCard
+                                situacao={item.situacao}
+                                name={item.nome}
+                                especialidade={item.especialidade}
+                                imagem={item.imagem}
+                                crm={item.crm}
+                                age={item.age}
+                                reason={item.reason}
+                                hour={item.hour}
+                            />
+                        );
+                    }
+                }
+                    
                 }
             />
 

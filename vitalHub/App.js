@@ -1,8 +1,6 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { StyleSheet, Text, View } from 'react-native';
-import { Navigation } from './src/screens/Navigation/Navigation';
-import { login, loginNav } from './src/screens/Login/Login';
+import { login } from './src/screens/Login/Login';
 
 const Stack = createNativeStackNavigator();
 
@@ -22,10 +20,12 @@ import { SelectDate } from './src/screens/SelectData/SelectDate';
 import { LocalAppointment } from './src/screens/LocalAppointment/LocalAppointment';
 import { ViewPrescription } from './src/screens/ViewPrescription/ViewPrecription';
 import { Main } from './src/screens/Main/Main';
+import { LogBox } from 'react-native';
 
-console.disableYellowBox = true;
+LogBox.ignoreLogs(['Warning: ...'])
 
 export default function App() {
+
 
   const[fontsLoaded, fontsError] = useFonts({
     MontserratAlternates_600SemiBold, MontserratAlternates_500Medium, MontserratAlternates_700Bold, Quicksand_500Medium, Quicksand_600SemiBold, Quicksand_400Regular
@@ -53,12 +53,6 @@ export default function App() {
         <Stack.Screen
         name="Main"
         component={Main}
-        />
-
-        <Stack.Screen 
-        name='Navegacao'
-        component={Navigation}
-        options={{ title: 'Navegacao' }}
         />
 
 

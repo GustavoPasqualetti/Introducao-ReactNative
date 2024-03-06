@@ -14,7 +14,7 @@ import { AntDesign } from '@expo/vector-icons';
 export const login = ({ navigation }) => {
 
     function Login() {
-        navigation.navigate("Main")
+        navigation.replace("Main")
     }
 
     return (
