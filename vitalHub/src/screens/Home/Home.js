@@ -12,12 +12,12 @@ import { AppointmentModal } from "../../components/AppointmentModal/AppointmentM
 import { MenuBottom } from "../../components/MenuBottom/MenuBottom"
 
 const Consultas = [
-    { id: 1, nome: "gustavo", age: 18, hour:'14:00', reason:'Rotina', situacao: "pendente", imagem: {uri: ('https://github.com/GustavoPasqualetti.png')}, email:"gustavopasqualetti@gmail.com"},
-    { id: 2, nome: "Joao Vitor", age: 20, hour:'15:00', reason:'Rotina', situacao: "realizada", imagem: {uri: ("https://github.com/zAlves31.png")}, email:"joaovitoralves@gmail.com" },
-    { id: 3, nome: "eduardo", age: 18, hour:'16:00', reason:'Rotina', situacao: "realizada", imagem: {uri: ('https://github.com/EduardoPasqualetti.png')}, email:"eduardopasqualetti@gmail.com" },
-   ]
+    { id: 1, nome: "gustavo", age: 18, hour: '14:00', reason: 'Rotina', situacao: "pendente", imagem: { uri: ('https://github.com/GustavoPasqualetti.png') }, email: "gustavopasqualetti@gmail.com" },
+    { id: 2, nome: "Joao Vitor", age: 20, hour: '15:00', reason: 'Rotina', situacao: "realizada", imagem: { uri: ("https://github.com/zAlves31.png") }, email: "joaovitoralves@gmail.com" },
+    { id: 3, nome: "eduardo", age: 18, hour: '16:00', reason: 'Rotina', situacao: "cancelada", imagem: { uri: ('https://github.com/EduardoPasqualetti.png') }, email: "eduardopasqualetti@gmail.com" },
+]
 
-export const Home = ({navigation}) => {
+export const Home = ({ navigation }) => {
 
     const [statusList, setStatusList] = useState("pendente")
 
@@ -31,10 +31,10 @@ export const Home = ({navigation}) => {
         <Container>
             <StatusBar />
 
-            <Header 
-            name={"Dr Claudio"} 
-            ProfileImage={require("../../assets/medico1.jpg")}
-            
+            <Header
+                name={"Dr Claudio"}
+                ProfileImage={require("../../assets/medico1.jpg")}
+
             />
 
             <CalendarHome />
@@ -61,42 +61,73 @@ export const Home = ({navigation}) => {
 
             </ContainerAppointment>
 
+
             <ListComponent
                 data={Consultas}
                 keyExtractor={(item) => item.id}
 
-                renderItem={({ item }) =>
-                    statusList == item.situacao && (
-                        <AppointmentCard
-                            situacao={item.situacao}
-                            onPressAppointment={() => {
-                                setSelectedAppointment(item); 
-                                setShowModalAppointment(true);
-                            }}
-                            onPressCancel={() => setShowModalCancel(true)}
-                            name={item.nome}
-                            age={item.age}
-                            reason={item.reason}
-                            hour={item.hour}
-                            imagem={item.imagem}
-                        />
-                    )
+                renderItem={({ item }) => {
+                    if (statusList === 'pendente' && item.situacao === 'pendente') {
+                        return (
+                            <AppointmentCard
+                                situacao={item.situacao}
+                                onPressCancel={() => setShowModalCancel(true)}
+                                name={item.nome}
+                                especialidade={item.especialidade}
+                                imagem={item.imagem}
+                                crm={item.crm}
+                                age={item.age}
+                                reason={item.reason}
+                                hour={item.hour}
+                            />
+                        );
+                    } if (statusList === 'realizada' && item.situacao === 'realizada') {
+                        return (
+                            <AppointmentCard
+                                situacao={item.situacao}
+                                onPressLocal={() => {
+                                    setSelectedAppointment(item);
+                                    setShowModalAppointment(true);
+                                }}
+                                onPressAppointment={() => navigation.navigate("InsertRecord")}
+                                name={item.nome}
+                                especialidade={item.especialidade}
+                                imagem={item.imagem}
+                                crm={item.crm}
+                                age={item.age}
+                                reason={item.reason}
+                                hour={item.hour}
+                            />
+                        );
+                    } if (statusList === 'cancelada' && item.situacao === 'cancelada') {
+                        return (
+                            <AppointmentCard
+                                situacao={item.situacao}
+                                name={item.nome}
+                                especialidade={item.especialidade}
+                                imagem={item.imagem}
+                                crm={item.crm}
+                                age={item.age}
+                                reason={item.reason}
+                                hour={item.hour}
+                            />
+                        );
+                    }
+                }
+
                 }
             />
 
-            <MenuBottom
-            navigation={navigation}
-            />
 
             <CancelModal
-            visible={showModalCancel}
-            setShowModalCancel={setShowModalCancel}
+                visible={showModalCancel}
+                setShowModalCancel={setShowModalCancel}
             />
             <AppointmentModal
-            visible={showModalAppointment}
-            setShowModalAppointment={setShowModalAppointment}
-            appointmentData={selectedAppointment}
-            navigation={navigation}
+                visible={showModalAppointment}
+                setShowModalAppointment={setShowModalAppointment}
+                appointmentData={selectedAppointment}
+                navigation={navigation}
             />
         </Container>
     )

@@ -70,7 +70,7 @@ export const HomeUser = ({ navigation }) => {
                 data={Consultas}
                 keyExtractor={(item) => item.id}
 
-                renderItem={({ item }) =>{
+                renderItem={({ item }) => {
                     if (statusList === 'pendente' && item.situacao === 'pendente') {
                         return (
                             <AppointmentCard
@@ -90,7 +90,7 @@ export const HomeUser = ({ navigation }) => {
                                 hour={item.hour}
                             />
                         );
-                    } if(statusList === 'realizada' && item.situacao === 'realizada') {
+                    } if (statusList === 'realizada' && item.situacao === 'realizada') {
                         return (
                             <AppointmentCard
                                 situacao={item.situacao}
@@ -104,7 +104,7 @@ export const HomeUser = ({ navigation }) => {
                                 hour={item.hour}
                             />
                         );
-                    } if(statusList === 'cancelada' && item.situacao === 'cancelada') {
+                    } if (statusList === 'cancelada' && item.situacao === 'cancelada') {
                         return (
                             <AppointmentCard
                                 situacao={item.situacao}
@@ -119,7 +119,7 @@ export const HomeUser = ({ navigation }) => {
                         );
                     }
                 }
-                    
+
                 }
             />
 
@@ -129,10 +129,7 @@ export const HomeUser = ({ navigation }) => {
                 <FontAwesome name="stethoscope" size={38} color="white" />
             </MakeAppointment>
 
-            {/* <MenuBottom 
-            navigation={navigation}
-            /> */}
-
+            
             <CancelModal
                 visible={showModalCancel}
                 setShowModalCancel={setShowModalCancel}
