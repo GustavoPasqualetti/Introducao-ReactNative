@@ -7,6 +7,7 @@ import { FontAwesome5 } from '@expo/vector-icons';
 
 const BottomTab = createBottomTabNavigator()
 
+
 export const Main = () => {
     return (
         <BottomTab.Navigator
@@ -22,20 +23,18 @@ export const Main = () => {
                     if (route.name === "Home") {
                         return (
                             <ContentIcon
-                                tabBarActiveBackgroundColor={focused ? "ECF2FF" : "transparent"}
                             >
                                 {focused ? <MaterialCommunityIcons name="calendar-check" size={24} color="#607EC5" /> : <MaterialCommunityIcons name="calendar-check" size={24} color="4E4B59" />}
                                 <TextIcon textColor={focused ? "#607EC5" : "#4E4B59"}>Agenda</TextIcon>
                             </ContentIcon>
                         )
-                    } else {
+                    } else if (route.name === "Profile") {
                         return (
                             <ContentIcon
-                                tabBarActiveBackgroundColor={focused ? "ECF2FF" : "transparent"}
                             >
 
                                 {focused ? <FontAwesome5 name="user-circle" size={22} color="#607EC5" /> : <FontAwesome5 name="user-circle" size={22} color="#4E4B59" />}
-                                <TextIcon textColor={focused ? "#607EC5" : "#4E4B59"}>Agenda</TextIcon>
+                                <TextIcon textColor={focused ? "#607EC5" : "#4E4B59"}>Perfil</TextIcon>
                             </ContentIcon>
                         )
                     }

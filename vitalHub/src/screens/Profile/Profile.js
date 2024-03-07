@@ -1,13 +1,14 @@
 import { BoxInput } from "../../components/BoxInput"
 import { ContainerProfile, ContainerScroll, ContainerUF } from "../../components/Container/Style"
 import { TextAdd } from "../../components/TextAdd/Style"
-import { TitleC } from "../../components/Title/Style"
+import { Title, TitleC } from "../../components/Title/Style"
 import { UserPicture } from "../../components/UserPicture/Style"
 import { ButtonTitle } from "../../components/ButtonTitle/Style"
 import { Button, Button2 } from "../../components/Button/Style"
 import { useState } from "react"
+import { CancelAppointment } from "../../components/Links/Style"
 
-export const Profile = () => {
+export const Profile = ({navigation}) => {
 
     const [ProfileEdit, setProfileEdit] = useState(true)
 
@@ -54,24 +55,23 @@ export const Profile = () => {
                         fieldHeight={60}  
                     />
                 </ContainerUF>
-
-
-                <Button>
-                    <ButtonTitle>SALVAR</ButtonTitle>
-                </Button>
-
+            
                 <Button2 onPress={() => setProfileEdit(false)}>
                     <ButtonTitle>EDITAR</ButtonTitle>
                 </Button2>
+
+                <CancelAppointment
+                onPress={() => navigation.replace("Main")}
+                >Voltar</CancelAppointment>
 
             </ContainerProfile>
             </>
             ) : (
             <>
-            <UserPicture source={require('../../assets/paciente.png')} />
+             <UserPicture source={{ uri: ('https://github.com/GustavoPasqualetti.png') }} />
             <ContainerProfile>
-                <Title>Richard Kosta</Title>
-                <TextAdd>22 anos      richard.kosta@gmail.com</TextAdd>
+                <TitleC>Gustavo Pasqualetti</TitleC>
+                <TextAdd>gustavopasqualetti@gmail.com</TextAdd>
 
                 <BoxInput
                     fieldWidht={80}
@@ -111,13 +111,13 @@ export const Profile = () => {
                 </ContainerUF>
 
 
-                <Button>
+                <Button onPress={() => setProfileEdit(true)}>
                     <ButtonTitle>SALVAR</ButtonTitle>
                 </Button>
 
-                <Button2>
-                    <ButtonTitle>EDITAR</ButtonTitle>
-                </Button2>
+                <CancelAppointment
+                onPress={() => navigation.replace("Main")}
+                >Voltar</CancelAppointment>
 
             </ContainerProfile>
             </>

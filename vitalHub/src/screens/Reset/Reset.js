@@ -11,7 +11,7 @@ import { AntDesign } from '@expo/vector-icons';
 export const Reset = ({navigation}) => {
     return (
         <Container>
-            <ButtonIcon onPress={() => navigation.navigate("Login")}>
+            <ButtonIcon onPress={() => navigation.replace("Login")}>
             <AntDesign name="close" size={32} color="#34898F" />
             </ButtonIcon>
 
@@ -27,7 +27,7 @@ export const Reset = ({navigation}) => {
             <Input placeholder="Confirmar nova senha" secureTextEntry='true'
             />
 
-            <Button onPress={() => navigation.navigate("Login")}>
+            <Button onPress={() => navigation.replace("Login")}>
                 <ButtonTitle>
                     Confirmar nova senha
                 </ButtonTitle>

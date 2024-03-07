@@ -1,4 +1,4 @@
-import { FieldContent, InputLabel, InputText } from "./style"
+import { FieldContent, InputLabel, InputText, InputTextModificate } from "./style"
 
 export const BoxInput = ({
     fieldWidht = 100,
@@ -12,7 +12,8 @@ export const BoxInput = ({
     maxLenght,
     onBlur = null,
     multiline,
-    keyboardType
+    keyboardType,
+    insertRecord
 }) => {
     return (
         <FieldContent
@@ -20,6 +21,23 @@ export const BoxInput = ({
         >
             <InputLabel>{textLabel}</InputLabel>
 
+            {insertRecord ? (
+            <>
+            <InputTextModificate
+                editable={editable}
+                placeholder={placeholder}
+                fieldValue={fieldValue}
+                onChangeText={onChangeText}
+                keyType={keyType}
+                maxLenght={maxLenght}
+                onBlur={onBlur}
+                fieldHeight={fieldHeight}
+                multiline={multiline}
+                keyboardType={keyboardType}
+            />
+            </>
+            ) : (
+            <>
             <InputText
                 editable={editable}
                 placeholder={placeholder}
@@ -33,6 +51,10 @@ export const BoxInput = ({
                 keyboardType={keyboardType}
                 
             />
+            </>
+            )}
+
+            
         </FieldContent>
     )
 

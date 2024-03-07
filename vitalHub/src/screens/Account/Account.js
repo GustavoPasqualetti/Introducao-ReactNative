@@ -27,13 +27,13 @@ export const Account = ({navigation}) => {
             <Input placeholder="Confirmar senha" secureTextEntry='true'
             />
 
-            <Button>
+            <Button onPress={() => navigation.replace("Login")}>
                 <ButtonTitle>CADASTRAR</ButtonTitle>
             </Button>
 
             <ContentAccount>
                 <LinKCancel 
-            onPress={() => navigation.navigate("Login")} >Cancelar</LinKCancel>
+            onPress={() => navigation.replace("Login")} >Cancelar</LinKCancel>
             </ContentAccount>
 
         </Container>

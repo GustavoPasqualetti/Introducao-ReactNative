@@ -43,7 +43,7 @@ export const Home = ({ navigation }) => {
 
     const [showModalLocal, setShowModalLocal] = useState(false)
 
-    const [userLogin, setUserLogin] = useState("medico")
+    const [userLogin, setUserLogin] = useState("paciente")
 
     return (
         userLogin == "medico" ? <Container>
@@ -52,7 +52,7 @@ export const Home = ({ navigation }) => {
             <Header
                 name={"Dr Claudio"}
                 ProfileImage={require("../../assets/medico1.jpg")}
-
+                navigation={navigation}
             />
 
             <CalendarHome />
@@ -107,7 +107,7 @@ export const Home = ({ navigation }) => {
                                     setSelectedAppointment(item);
                                     setShowModalAppointment(true);
                                 }}
-                                onPressAppointment={() => navigation.navigate("InsertRecord")}
+                                onPressAppointment={() => navigation.navigate("ViewRecord")}
                                 name={item.nome}
                                 especialidade={item.especialidade}
                                 imagem={item.imagem}
@@ -154,6 +154,7 @@ export const Home = ({ navigation }) => {
         <Container>
             <Header name={"Gustavo"}
                 ProfileImage={{ uri: ('https://github.com/GustavoPasqualetti.png') }}
+                navigation={navigation}
             />
 
             <CalendarHome />

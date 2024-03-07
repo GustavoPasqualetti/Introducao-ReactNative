@@ -10,7 +10,7 @@ import { AntDesign } from '@expo/vector-icons';
 export const Recover = ({navigation}) => {
     return(
         <Container>
-            <ButtonIcon onPress={() => navigation.navigate("Login")}>
+            <ButtonIcon onPress={() => navigation.replace("Login")}>
             <AntDesign name="arrowleft" size={32} color="#34898F" />
             </ButtonIcon>
             <Logo source={require('../../assets/logo.png')}/>

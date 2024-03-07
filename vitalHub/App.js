@@ -12,7 +12,6 @@ import { EmailCode } from './src/screens/EmailCode/EmailCode';
 import { Reset } from './src/screens/Reset/Reset';
 import { Profile } from './src/screens/Profile/Profile';
 import { Home } from './src/screens/Home/Home';
-import { InsertRecord } from './src/screens/InsertRecord/InsertRecord';
 import { SelectClinic } from './src/screens/SelectClinic/SelectClinic';
 import { SelectDoctor } from './src/screens/SelectDoctor/SelectDoctor';
 import { SelectDate } from './src/screens/SelectData/SelectDate';
@@ -20,7 +19,10 @@ import { LocalAppointment } from './src/screens/LocalAppointment/LocalAppointmen
 import { ViewPrescription } from './src/screens/ViewPrescription/ViewPrecription';
 import { Main } from './src/screens/Main/Main';
 import { LogBox } from 'react-native';
+import { ViewRecord } from './src/screens/ViewRecord/ViewRecord';
+import { InsertRecord } from './src/screens/InsertRecord/InsertRecord';
 
+// LogBox.ignoreAllLogs()
 LogBox.ignoreLogs(['Warning: ...'])
 
 export default function App() {
@@ -90,6 +92,12 @@ export default function App() {
         component={Home}
         options={{ title: 'Home' }}        
         />     
+
+         <Stack.Screen 
+        name='ViewRecord'
+        component={ViewRecord}
+        options={{ title: 'ViewRecord' }}        
+        />  
 
          <Stack.Screen 
         name='InsertRecord'

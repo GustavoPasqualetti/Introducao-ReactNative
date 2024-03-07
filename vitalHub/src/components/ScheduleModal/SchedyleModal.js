@@ -9,13 +9,14 @@ import { BlueTitle, ContainerButtonsSchedule, LabelSchedule, SmallButton, TypeAp
 
 export const ScheduleModal = ({ navigation, visible, setShowModalSchedule, ...rest }) => {
 
-    const onPressHandler = () => {
-        navigation.navigate("SelectClinic");
-        setShowModalSchedule(false)
+    async function onPressHandler() {
+        await setShowModalSchedule(false)
+        navigation.replace("SelectClinic");
+        
     };
 
     return (
-        <Modal {...rest} visible={visible} transparent={true} animationType="fade">
+        <Modal {...rest} visible={visible} transparent={true} animationType="fade" animationOutTiming={0}>
             <ViewModal>
                 <ContentModal>
                     <Title>Agendar consulta</Title>

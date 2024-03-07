@@ -16,6 +16,10 @@ const onPressHandler = () => {
     setShowModalSummary(false)
 };
 
+const onPresConfirm = () => {
+    navigation.navigate("Main")
+    setShowModalSummary(false)
+}
     return (
         <Modal {...rest} visible={visible} transparent={true} animationType="fade">
             <ViewModal>
@@ -41,7 +45,7 @@ const onPressHandler = () => {
                         <SubTitle>Rotina</SubTitle>
                     </BoxSchedule>
 
-                    <Button onPress={() => navigation.navigate("HomeUser")}>
+                    <Button onPress={() => {onPresConfirm()}}>
                         <ButtonTitle>
                             CONFIRMAR
                         </ButtonTitle>

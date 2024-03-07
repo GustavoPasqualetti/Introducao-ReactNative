@@ -20,8 +20,6 @@ text-decoration: underline;
 font-family: MontserratAlternates_600SemiBold;
 `
 
-
-
 export const LinkResend = styled.Text`
 color: #344F8F;
 text-decoration: underline;

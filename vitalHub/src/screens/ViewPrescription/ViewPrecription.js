@@ -58,7 +58,7 @@ export const ViewPrescription = ({ navigation }) => {
                     multiline={true}
                 />
 
-                <CancelAppointment onPress={() => navigation.navigate("HomeUser")}>
+                <CancelAppointment onPress={() => navigation.replace("main")}>
                     Voltar
                 </CancelAppointment>
 

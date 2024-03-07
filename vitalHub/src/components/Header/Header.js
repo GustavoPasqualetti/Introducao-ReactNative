@@ -3,11 +3,11 @@ import { NotiIcon } from "../Logo/Style"
 import { BoxUser, DataUser, ImageUser, NameUser, TextDefaulte} from "./style"
 import { Ionicons } from '@expo/vector-icons';
 
-export const Header = ({name,ProfileImage }) => {
+export const Header = ({name,ProfileImage, navigation }) => {
     return(
 
         <ContainerHeader>
-            <BoxUser>
+            <BoxUser onPress={() => navigation.replace("Profile")}>
                 
                 <ImageUser source={ProfileImage}/>
                 <DataUser>

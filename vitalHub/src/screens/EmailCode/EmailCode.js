@@ -11,7 +11,7 @@ import { AntDesign } from '@expo/vector-icons';
 export const EmailCode = ({navigation}) => {
     return (
         <Container>
-            <ButtonIcon onPress={() => navigation.navigate("Login")}>
+            <ButtonIcon onPress={() => navigation.replace("Login")}>
             <AntDesign name="close" size={32} color="#34898F" />
             </ButtonIcon>
             

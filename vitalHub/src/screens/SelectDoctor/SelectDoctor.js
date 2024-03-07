@@ -5,6 +5,8 @@ import { CardDoctor } from "../../components/CardDoctor/CardDoctor"
 import { Container } from "../../components/Container/Style"
 import { TitleB } from "../../components/Title/Style"
 import { CancelAppointment } from "../../components/Links/Style"
+import { ScheduleModal } from "../../components/ScheduleModal/SchedyleModal"
+import { useState } from "react"
 
 const Medicos = [
     { id: 1, nome: "DrClaudio", especialidade: "Clinico Geral", foto: require("../../assets/medico1.jpg") },
@@ -15,6 +17,15 @@ const Medicos = [
 ]
 
 export const SelectDoctor = ({ navigation }) => {
+
+    const [showModalSchedule, setShowModalSchedule] = useState(false)
+
+    const onPressCancel = () => {
+        navigation.navigate("Main")
+        setShowModalSchedule(true)
+        
+    }
+
     return (
         <Container>
             <TitleB>Selecionar médico</TitleB>
@@ -30,13 +41,18 @@ export const SelectDoctor = ({ navigation }) => {
             </ScrollView>
 
 
-            <Button onPress={() => navigation.navigate("SelectDate")}>
+            <Button onPress={() => navigation.replace("SelectDate")}>
                 <ButtonTitle>
                     CONTINUAR
                 </ButtonTitle>
             </Button>
 
-            <CancelAppointment onPress={() => navigation.replace("HomeUser")}>Cancelar</CancelAppointment>
+            <CancelAppointment onPress={() => onPressCancel()}>Cancelar</CancelAppointment>
+
+            <ScheduleModal
+                visible={showModalSchedule}
+                setShowModalSchedule={setShowModalSchedule}
+            />
 
         </Container>
     )
