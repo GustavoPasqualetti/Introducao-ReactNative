@@ -6,14 +6,19 @@ import {
   getCurrentPositionAsync
 } from 'expo-location';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { BoxMap } from './Box/Box';
 
 import MapViewDirections from 'react-native-maps-directions';
 import { mapskey } from './Utils/mapskey';
 
 export default function App() {
+  const mapReference = useRef(null)
   const [initialPosition, setInitialPosition] = useState(null)
+  const [finalPosition, setFinalPosition] = useState({
+    latitude: -23.6503,
+    longitude: -46.5640,
+  })
 
   async function CapturarLocalizacao() {
     const { granted } = await requestForegroundPermissionsAsync()
@@ -32,14 +37,34 @@ export default function App() {
     CapturarLocalizacao()
   }, [1000])
 
+  useEffect(() => {
+    RecarregarVisualizacaoMapa()
+  }, [initialPosition])
+
+  async function RecarregarVisualizacaoMapa() {
+    if (mapReference.current && initialPosition) {
+      await mapReference.current.fitToCoordinates(
+        [{ latitude: initialPosition.coords.latitude, longitude: initialPosition.coords.longitude },
+        { latitude: finalPosition.latitude, longitude: finalPosition.longitude }],
+        {
+          edgePadding: { top: 60, right: 60, bottom: 60, left: 60 },
+          animated: true
+        }
+      )
+    }
+  }
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <Text style={styles.texto}>Sua rota:</Text>
       <BoxMap>
         {
           initialPosition != null
             ? (
               <MapView
+
+                ref={mapReference}
+
                 style={styles.map}
                 customMapStyle={grayMapStyle}
                 provider={PROVIDER_GOOGLE}
@@ -51,7 +76,7 @@ export default function App() {
                   latitudeDelta: 0.005,
                   longitudeDelta: 0.005,
                 }}
-                
+
               >
                 <Marker
                   coordinate={{
@@ -60,7 +85,7 @@ export default function App() {
                   }}
                   title='Position'
                   description='Posicao atual'
-                  pinColor={'green'}
+                  pinColor={'blue'}
                 />
 
                 <MapViewDirections
@@ -98,6 +123,8 @@ export default function App() {
         }
       </BoxMap>
 
+      <Text style={styles.SubTitulo}>Boa viajem!</Text>
+
       <StatusBar style="auto" />
     </View>
   );
@@ -116,6 +143,17 @@ const styles = StyleSheet.create({
     width: '80%',
     height: '60%'
   },
+
+  texto: {
+    fontSize: 18,
+    fontWeight: '700'
+  },
+
+  SubTitulo: {
+    marginTop: 30,
+    fontWeight: '500',
+    fontSize: 16
+  }
 
 });
 
