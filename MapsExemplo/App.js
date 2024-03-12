@@ -1,16 +1,18 @@
 import { StatusBar } from 'expo-status-bar';
-import { ActivityIndicator, StyleSheet, Text, View } from 'react-native';
+import { ActivityIndicator, LogBox, StyleSheet, Text, View } from 'react-native';
 import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps';
 import {
   requestForegroundPermissionsAsync,
-  getCurrentPositionAsync
+  getCurrentPositionAsync,
+  watchPositionAsync,
+  LocationAccuracy
 } from 'expo-location';
-
 import { useEffect, useRef, useState } from 'react';
 import { BoxMap } from './Box/Box';
-
 import MapViewDirections from 'react-native-maps-directions';
 import { mapskey } from './Utils/mapskey';
+
+LogBox.ignoreLogs(['Warning: ...'])
 
 export default function App() {
   const mapReference = useRef(null)
@@ -35,6 +37,24 @@ export default function App() {
 
   useEffect(() => {
     CapturarLocalizacao()
+
+    watchPositionAsync({
+      accuracy: LocationAccuracy.Highest,
+      timeInterval: 10000,
+      distanceInterval: 1
+    }, async (response) => {
+      await setInitialPosition(response)
+
+      mapReference.current?.setCamera({
+        pitch: 60,
+        center: {
+          latitude: initialPosition.coords.latitude,
+          longitude: initialPosition.coords.longitude,
+        }
+      })
+      
+      console.log(response);
+    })
   }, [1000])
 
   useEffect(() => {
@@ -83,8 +103,8 @@ export default function App() {
                     latitude: initialPosition.coords.latitude,
                     longitude: initialPosition.coords.longitude
                   }}
-                  title='Position'
-                  description='Posicao atual'
+                  title='Voce esta aqui'
+                  description='Localizacao atual'
                   pinColor={'blue'}
                 />
 
@@ -108,8 +128,8 @@ export default function App() {
                     latitudeDelta: 0.005,
                     longitudeDelta: 0.005,
                   }}
-                  title='Position'
-                  description='Posicao atual'
+                  title='Destino'
+                  description='Rua Roseira'
                   pinColor={'red'}
                 />
               </MapView>
@@ -150,7 +170,7 @@ const styles = StyleSheet.create({
   },
 
   SubTitulo: {
-    marginTop: 30,
+    marginTop: 50,
     fontWeight: '500',
     fontSize: 16
   }
