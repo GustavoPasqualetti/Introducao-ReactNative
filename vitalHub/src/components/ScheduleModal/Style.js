@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 export const TypeAppointment = styled.View`
 width: 90%;
-height: 318px;
+
 margin-top: 30px;
 margin-bottom: 15px;    
 `
