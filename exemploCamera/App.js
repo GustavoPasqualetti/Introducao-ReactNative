@@ -30,12 +30,13 @@ export default function App() {
       await MediaLibrary.deleteAssetsAsync([photo])
         .then(() => {
           alert('Foto apagada')
+
         }).catch(error => {
           alert('Erro ao apagar foto')
         })
     }
     setPhoto(null)
-    
+    setOpenModal(false)
   }
 
   async function SavePhoto() {
@@ -68,48 +69,49 @@ export default function App() {
         style={styles.camera}
       >
 
+        <View style={styles.box}>
+
+          <TouchableOpacity style={styles.btnFlip} onPress={() => setTipoCamera(tipoCamera == CameraType.front ? CameraType.back : CameraType.front)}>
+            <FontAwesome6 name="camera-rotate" size={44} color="#49B3BA" />
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.btnCaptura} onPress={() => CapturePhoto()}>
+          <FontAwesome6 name="circle-dot" size={66} color="white" />
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.btnFlash} onPress={() => setFlashMode(flashMode == FlashMode.on ? FlashMode.off : FlashMode.on)}>
+            <Ionicons name={flashMode === FlashMode.on ? "flash" : "flash-off"} size={40} color={flashMode === FlashMode.on ? "yellow" : "#49B3BA"} />
+          </TouchableOpacity>
+        </View>
+
+
+
+        <Modal
+          animationType='slide'
+          transparent={false}
+          visible={openModal}
+        >
+          <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', padding: 30 }}>
+            <Image
+              style={{ width: '100%', height: 500, borderRadius: 10 }}
+              source={{ uri: photo }}
+            />
+
+            <View style={{ margin: 15, flexDirection: 'row' }}>
+              <TouchableOpacity style={styles.btnCancel} onPress={() => ClearPhoto()}>
+                <FontAwesome name='trash' size={40} color={'#ff0000'} />
+              </TouchableOpacity>
+
+              <TouchableOpacity style={styles.btnUpload} onPress={() => SavePhoto()}>
+                <FontAwesome name='save' size={40} color={'#121212'} />
+              </TouchableOpacity>
+            </View>
+
+          </View>
+        </Modal>
       </Camera>
 
-      <View style={styles.box}>
 
-        <TouchableOpacity style={styles.btnFlip} onPress={() => setTipoCamera(tipoCamera == CameraType.front ? CameraType.back : CameraType.front)}>
-          <FontAwesome6 name="camera-rotate" size={36} color="black" />
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.btnCaptura} onPress={() => CapturePhoto()}>
-          <FontAwesome name="camera" size={28} color="white" />
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.btnFlash} onPress={() => setFlashMode(flashMode == FlashMode.on ? FlashMode.off : FlashMode.on)}>
-          <Ionicons name={flashMode === FlashMode.on ? "flash" : "flash-off"} size={24} color={flashMode === FlashMode.on ? "yellow" : "black"} />
-        </TouchableOpacity>
-      </View>
-
-
-
-      <Modal
-        animationType='slide'
-        transparent={false}
-        visible={openModal}
-      >
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', padding: 30 }}>
-          <Image
-            style={{ width: '100%', height: 500, borderRadius: 10 }}
-            source={{ uri: photo }}
-          />
-
-          <View style={{ margin: 15, flexDirection: 'row' }}>
-            <TouchableOpacity style={styles.btnCancel} onPress={() => ClearPhoto()}>
-              <FontAwesome name='trash' size={40} color={'#ff0000'} />
-            </TouchableOpacity>
-
-            <TouchableOpacity style={styles.btnUpload} onPress={() => SavePhoto()}>
-              <FontAwesome name='save' size={40} color={'#121212'} />
-            </TouchableOpacity>
-          </View>
-
-        </View>
-      </Modal>
 
       <StatusBar style="auto" />
     </View>
@@ -129,41 +131,39 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   btnFlip: {
-
-    height: 80,
-    width: 80,
     padding: 20,
-    borderRadius: 15,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    
   },
   btnCaptura: {
 
-    height: 70,
-    width: 80,
-    padding: 20,
-    borderRadius: 15,
-    backgroundColor: '#121212',
+    height: 72,
+    width: 72,
+    borderRadius: 80,
+    backgroundColor: '#49B3BA',
     alignItems: 'center',
-    justifyContent: 'center'
-
+    justifyContent: 'center',
+    marginBottom: 10,
   },
   btnFlash: {
-    height: 80,
-    width: 80,
     padding: 20,
-    borderRadius: 15,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+   
   },
   box: {
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    height: 140,
+    height: 160,
     width: '100%',
-    backgroundColor: '#d3d3d3',
-    gap: 80
+    gap: 70,
+    position: 'absolute',
+    bottom: 0,
+    backgroundColor: 'rgba(300, 300, 300, 0.1)', // Cor transparente com opacidade 0.2
+    backdropFilter: 'blur(10px)', // Efeito de desfoque
+    borderRadius: 10
   },
   btnCancel: {
     padding: 20,
@@ -181,5 +181,9 @@ const styles = StyleSheet.create({
 
     alignItems: 'center',
     justifyContent: 'center'
+  },
+  circle: {
+    backgroundColor: 'white',
+    borderColor: 'white',
   }
 });
