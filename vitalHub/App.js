@@ -21,6 +21,8 @@ import { Main } from './src/screens/Main/Main';
 import { LogBox } from 'react-native';
 import { ViewRecord } from './src/screens/ViewRecord/ViewRecord';
 import { InsertRecord } from './src/screens/InsertRecord/InsertRecord';
+import Camera from './src/screens/Camera/Camera';
+import CameraScreen from './src/screens/Camera/Camera';
 
 // LogBox.ignoreAllLogs()
 LogBox.ignoreLogs(['Warning: ...'])
@@ -133,6 +135,12 @@ export default function App() {
         name='ViewPrescription'
         component={ViewPrescription}
         options={{ title: 'ViewPrescription' }}        
+        />   
+
+         <Stack.Screen 
+        name='CameraScreen'
+        component={CameraScreen}
+        options={{ title: 'CameraScreen' }}        
         />   
       </Stack.Navigator>
 

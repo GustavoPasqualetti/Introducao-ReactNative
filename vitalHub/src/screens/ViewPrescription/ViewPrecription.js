@@ -1,3 +1,4 @@
+import { Image } from "react-native"
 import { BoxImage } from "../../components/BoxImage/BoxImage"
 import { BoxInput } from "../../components/BoxInput"
 import { InputText } from "../../components/BoxInput/style"
@@ -6,9 +7,24 @@ import { Container, ContainerScroll } from "../../components/Container/Style"
 import { CancelAppointment } from "../../components/Links/Style"
 import { SubTitle, TitleC } from "../../components/Title/Style"
 import { UserPicture } from "../../components/UserPicture/Style"
-import { ContainerPrescription, ContainerSubTitle, Line } from "./Style"
+import { BoxPrescription, ButtonCancel, ButtonUpload, ContainerPrescription, ContainerSubTitle, ContentUpload, Line, PrescriptionImage, TextBox, TextBox2, TextCancel, TitleBox } from "./Style"
+import { AntDesign } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { useState } from "react"
 
-export const ViewPrescription = ({ navigation }) => {
+export const ViewPrescription = ({ navigation, route }) => {
+    const { photoUri } = route.params || {};
+    const[isPhoto,setIsPhoto] = useState(true)
+
+    function onPressPhoto() {
+        navigation.navigate("CameraScreen");
+        setIsPhoto(true)
+    }
+
+    function onPressCancel() {
+        setIsPhoto(false);
+        route.params = null
+    }
     return (
         <ContainerScroll>
             <Container>
@@ -47,7 +63,33 @@ export const ViewPrescription = ({ navigation }) => {
                     fieldHeight={120}
                 />
 
-                <BoxImage />
+                <TitleBox>Exames médicos</TitleBox>
+
+                {
+                    photoUri && isPhoto ?
+                        <PrescriptionImage
+                            source={{ uri: photoUri }}
+                            
+                        />
+                        :
+                        <BoxPrescription>
+                            <AntDesign name="upload" size={20} color="#4E4B59" />
+                            <TextBox>Nenhuma foto informada</TextBox>
+                        </BoxPrescription>
+                }
+
+
+
+                <ContentUpload>
+                    <ButtonUpload onPress={() => {onPressPhoto()}}>
+                        <MaterialCommunityIcons name="camera-plus-outline" size={22} color="white" />
+                        <TextBox2>Enviar</TextBox2>
+                    </ButtonUpload>
+                    <ButtonCancel onPress={() => {onPressCancel()}}>
+                        <TextCancel>Cancelar</TextCancel>
+                    </ButtonCancel>
+                </ContentUpload>
+
 
                 <Line />
 
@@ -58,7 +100,7 @@ export const ViewPrescription = ({ navigation }) => {
                     multiline={true}
                 />
 
-                <CancelAppointment onPress={() => navigation.replace("main")}>
+                <CancelAppointment onPress={() => navigation.replace("Main")}>
                     Voltar
                 </CancelAppointment>
 
