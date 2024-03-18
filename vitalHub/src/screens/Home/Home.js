@@ -43,7 +43,7 @@ export const Home = ({ navigation }) => {
 
     const [showModalLocal, setShowModalLocal] = useState(false)
 
-    const [userLogin, setUserLogin] = useState("paciente")
+    const [userLogin, setUserLogin] = useState("medico")
 
     return (
         userLogin == "medico" ? <Container>

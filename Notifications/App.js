@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import * as Notifications from "expo-notifications"
-import { Asset } from 'expo-asset';
+
 
 Notifications.requestPermissionsAsync(
 Notifications.setNotificationHandler({
