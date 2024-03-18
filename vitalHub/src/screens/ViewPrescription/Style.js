@@ -78,6 +78,6 @@ export const PrescriptionImage = styled.Image`
     width: 310px;
     height: 540px;
     border-radius: 10px;
-    
+    rotate: '180deg' ;
 `
 

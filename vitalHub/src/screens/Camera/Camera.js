@@ -124,7 +124,7 @@ export default function CameraScreen({ navigation }) {
                 >
                     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', padding: 30 }}>
                         <Image
-                            style={{ width: '100%', height: 500, borderRadius: 10 }}
+                            style={{ width: '100%', height: 500, borderRadius: 10, transform: [{ rotate: '180deg' }] }}
                             source={{ uri: photo }}
                         />
 

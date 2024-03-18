@@ -69,7 +69,7 @@ export const ViewPrescription = ({ navigation, route }) => {
                     photoUri && isPhoto ?
                         <PrescriptionImage
                             source={{ uri: photoUri }}
-                            
+                            style={{transform: [{ rotate: '180deg' }]}}
                         />
                         :
                         <BoxPrescription>
