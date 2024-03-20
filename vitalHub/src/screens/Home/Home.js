@@ -43,7 +43,7 @@ export const Home = ({ navigation }) => {
 
     const [showModalLocal, setShowModalLocal] = useState(false)
 
-    const [userLogin, setUserLogin] = useState("medico")
+    const [userLogin, setUserLogin] = useState("paciente")
 
     return (
         userLogin == "medico" ? <Container>
@@ -107,7 +107,7 @@ export const Home = ({ navigation }) => {
                                     setSelectedAppointment(item);
                                     setShowModalAppointment(true);
                                 }}
-                                onPressAppointment={() => navigation.navigate("ViewRecord")}
+                                onPressAppointment={() => navigation.navigate("ViewPrescription")}
                                 name={item.nome}
                                 especialidade={item.especialidade}
                                 imagem={item.imagem}
@@ -209,7 +209,7 @@ export const Home = ({ navigation }) => {
                         return (
                             <AppointmentCard
                                 situacao={item.situacao}
-                                onPressLocal={() => navigation.navigate("ViewPrescription")}
+                                onPressLocal={() => navigation.navigate("ViewRecord")}
                                 name={item.nome}
                                 especialidade={item.especialidade}
                                 imagem={item.imagem}
